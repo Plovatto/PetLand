@@ -3,8 +3,9 @@
 @theme {
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(0 0% 3.9%);
-  --color-primary: #ff6f31;
+  --color-primary: hsl(142 76% 36%);
   --color-secondary: hsl(142 30% 25%);
+  --color-card: hsl(0 0% 100%);
   --color-muted: hsl(142 30% 96%);
   --color-muted-foreground: hsl(0 0% 45%);
 }
@@ -67,4 +68,52 @@ section[id] {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #ff8c31 0%, #ffa031 100%);
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mySwiper {
+  padding: 0.75rem 0 1.2rem 0 !important;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-slide > div {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.card-gradient {
+  transition: background 300ms ease;
+}
+
+.swiper-slide-active .card-gradient {
+  background: transparent;
+}
+
+.swiper-slide-next .card-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.656),
+    rgba(0, 0, 0, 0.353),
+    rgba(0, 0, 0, 0.056)
+  );
+}
+
+.swiper-slide-prev .card-gradient {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.656),
+    rgba(0, 0, 0, 0.353),
+    rgba(0, 0, 0, 0.056)
+  );
 }
