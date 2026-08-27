@@ -6,13 +6,15 @@ import { scrollToSection } from '@/lib/scroll'
 const TITLE = 'A felicidade do seu animal de estimação é a nossa'
 const TITLE_WORDS = TITLE.split(' ')
 
+const EXIT_TRANSITION = { duration: 0.4, ease: 'easeInOut' } as const
+
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, transition: EXIT_TRANSITION },
   visible: { opacity: 1, transition: { staggerChildren: 0.3, delayChildren: 0.2 } },
 }
 
 const imageVariants = {
-  hidden: { opacity: 0, scale: 0.3, rotateY: -180, rotateX: 20 },
+  hidden: { opacity: 0, scale: 0.3, rotateY: -180, rotateX: 20, transition: EXIT_TRANSITION },
   visible: {
     opacity: 1,
     scale: 1,
@@ -23,7 +25,7 @@ const imageVariants = {
 }
 
 const textVariants = {
-  hidden: { opacity: 0, x: -100, filter: 'blur(10px)' },
+  hidden: { opacity: 0, x: -100, filter: 'blur(10px)', transition: EXIT_TRANSITION },
   visible: {
     opacity: 1,
     x: 0,
@@ -33,7 +35,7 @@ const textVariants = {
 }
 
 const wordVariants = {
-  hidden: { opacity: 0, y: 50, rotateX: 90 },
+  hidden: { opacity: 0, y: 50, rotateX: 90, transition: EXIT_TRANSITION },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -42,8 +44,27 @@ const wordVariants = {
   }),
 }
 
+const priorityVariants = {
+  hidden: { opacity: 0, scale: 0, transition: EXIT_TRANSITION },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'spring' as const,
+      damping: 10,
+      stiffness: 100,
+      delay: TITLE_WORDS.length * 0.1 + 0.3,
+    },
+  },
+}
+
+const paragraphVariants = {
+  hidden: { opacity: 0, y: 30, transition: EXIT_TRANSITION },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.6 } },
+}
+
 const buttonVariants = {
-  hidden: { opacity: 0, scale: 0, y: 50 },
+  hidden: { opacity: 0, scale: 0, y: 50, transition: EXIT_TRANSITION },
   visible: {
     opacity: 1,
     scale: 1,
@@ -59,16 +80,17 @@ const buttonVariants = {
 }
 
 function Hero() {
-  const isLoading = useIsLoading()
+  const isHeld = useIsLoading()
+  const revealKey = isHeld ? 'held' : 'revealed'
 
   return (
     <section id="home" className="relative overflow-hidden py-25 md:py-15">
       <motion.div
+        key={revealKey}
         className="bg-background relative z-10 container mx-auto px-8 py-10 md:py-28"
         variants={containerVariants}
         initial="hidden"
-        animate={isLoading ? 'hidden' : undefined}
-        whileInView={isLoading ? undefined : 'visible'}
+        whileInView={isHeld ? undefined : 'visible'}
         viewport={{ once: false, amount: 0.2 }}
       >
         <div className="flex flex-col items-center gap-16 md:flex-row md:gap-0">
@@ -106,8 +128,7 @@ function Hero() {
                   custom={i}
                   variants={wordVariants}
                   initial="hidden"
-                  animate={isLoading ? 'hidden' : undefined}
-                  whileInView={isLoading ? undefined : 'visible'}
+                  whileInView={isHeld ? undefined : 'visible'}
                   viewport={{ once: false }}
                   className="mr-2 inline-block"
                 >
@@ -116,16 +137,10 @@ function Hero() {
               ))}
               <motion.span
                 className="inline-block text-[#FF6F31]"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={isLoading ? { opacity: 0, scale: 0 } : undefined}
-                whileInView={isLoading ? undefined : { opacity: 1, scale: 1 }}
+                variants={priorityVariants}
+                initial="hidden"
+                whileInView={isHeld ? undefined : 'visible'}
                 viewport={{ once: false }}
-                transition={{
-                  type: 'spring',
-                  damping: 10,
-                  stiffness: 100,
-                  delay: TITLE_WORDS.length * 0.1 + 0.3,
-                }}
               >
                 prioridade.
               </motion.span>
@@ -133,11 +148,10 @@ function Hero() {
 
             <motion.p
               className="text-muted-foreground mb-8 max-w-lg text-base md:text-lg"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isLoading ? { opacity: 0, y: 30 } : undefined}
-              whileInView={isLoading ? undefined : { opacity: 1, y: 0 }}
+              variants={paragraphVariants}
+              initial="hidden"
+              whileInView={isHeld ? undefined : 'visible'}
               viewport={{ once: false }}
-              transition={{ delay: 0.8, duration: 0.6 }}
             >
               O Petland petshop é uma opção conveniente e completa para os donos de animais de
               estimação, que desejam cuidar da saúde e do bem-estar dos seus pets. Com uma variedade
@@ -150,8 +164,7 @@ function Hero() {
               className="relative cursor-pointer overflow-hidden rounded-lg bg-[#FF6F31] px-8 py-4 font-semibold text-white shadow-md"
               variants={buttonVariants}
               initial="hidden"
-              animate={isLoading ? 'hidden' : undefined}
-              whileInView={isLoading ? undefined : 'visible'}
+              whileInView={isHeld ? undefined : 'visible'}
               viewport={{ once: false }}
               whileHover="hover"
               whileTap="tap"
