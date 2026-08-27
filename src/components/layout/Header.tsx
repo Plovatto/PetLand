@@ -3,16 +3,15 @@ import { useEffect, useState } from 'react'
 import logo from '@/assets/logo.svg'
 import { NAV_LINKS } from '@/constants/navigation'
 import { useIsLoading } from '@/context/LoadingContext'
+import { useTransition } from '@/context/TransitionContext'
 import { useActiveSection } from '@/hooks/useActiveSection'
-import { scrollToSection } from '@/lib/scroll'
 
 const SECTION_IDS = NAV_LINKS.map((link) => link.href)
-const TRANSITION_DURATION_MS = 400
 
 function Header() {
   const isLoading = useIsLoading()
+  const { isTransitioning, startTransition } = useTransition()
   const activeLink = useActiveSection(SECTION_IDS)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -21,13 +20,8 @@ function Header() {
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault()
-    setIsTransitioning(true)
     setIsMobileMenuOpen(false)
-
-    setTimeout(() => {
-      scrollToSection(href)
-      setTimeout(() => setIsTransitioning(false), 1000)
-    }, TRANSITION_DURATION_MS)
+    startTransition(href)
   }
 
   return (
