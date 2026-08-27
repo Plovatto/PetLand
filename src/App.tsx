@@ -2,6 +2,7 @@ import CustomCursor from '@/components/layout/CustomCursor'
 import Header from '@/components/layout/Header'
 import PageLoader from '@/components/layout/PageLoader'
 import About from '@/components/sections/About'
+import Contact from '@/components/sections/Contact'
 import Hero from '@/components/sections/Hero'
 import Services from '@/components/sections/Services'
 import { LoadingProvider } from '@/context/LoadingProvider'
@@ -24,6 +25,7 @@ function App() {
             <Hero />
             <Services />
             <About />
+            <Contact />
           </main>
         </div>
       </TransitionProvider>
