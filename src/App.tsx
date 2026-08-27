@@ -5,8 +5,10 @@ import Hero from '@/components/sections/Hero'
 import { LoadingProvider } from '@/context/LoadingProvider'
 import { TransitionProvider } from '@/context/TransitionProvider'
 import { useLenis } from '@/hooks/useLenis'
+import { useResetScrollOnMount } from '@/hooks/useResetScrollOnMount'
 
 function App() {
+  useResetScrollOnMount()
   useLenis()
 
   return (

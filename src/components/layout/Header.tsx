@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import logo from '@/assets/logo.svg'
 import { NAV_LINKS } from '@/constants/navigation'
 import { useIsLoading } from '@/context/LoadingContext'
@@ -13,10 +13,6 @@ function Header() {
   const { isTransitioning, startTransition } = useTransition()
   const activeLink = useActiveSection(SECTION_IDS)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [])
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault()
