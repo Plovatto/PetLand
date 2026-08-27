@@ -10,6 +10,10 @@
   --color-muted-foreground: hsl(0 0% 45%);
 }
 
+* {
+  border-color: var(--color-muted);
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
