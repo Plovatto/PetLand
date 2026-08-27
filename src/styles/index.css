@@ -5,6 +5,7 @@
   --color-foreground: hsl(0 0% 3.9%);
   --color-primary: hsl(142 76% 36%);
   --color-secondary: hsl(142 30% 25%);
+  --color-secondary-foreground: hsl(0 0% 100%);
   --color-card: hsl(0 0% 100%);
   --color-muted: hsl(142 30% 96%);
   --color-muted-foreground: hsl(0 0% 45%);

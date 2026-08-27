@@ -1,4 +1,5 @@
 import CustomCursor from '@/components/layout/CustomCursor'
+import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import PageLoader from '@/components/layout/PageLoader'
 import About from '@/components/sections/About'
@@ -27,6 +28,7 @@ function App() {
             <About />
             <Contact />
           </main>
+          <Footer />
         </div>
       </TransitionProvider>
     </LoadingProvider>
