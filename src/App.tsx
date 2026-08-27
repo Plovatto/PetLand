@@ -2,6 +2,7 @@ import CustomCursor from '@/components/layout/CustomCursor'
 import Header from '@/components/layout/Header'
 import PageLoader from '@/components/layout/PageLoader'
 import Hero from '@/components/sections/Hero'
+import Services from '@/components/sections/Services'
 import { LoadingProvider } from '@/context/LoadingProvider'
 import { TransitionProvider } from '@/context/TransitionProvider'
 import { useLenis } from '@/hooks/useLenis'
@@ -20,6 +21,7 @@ function App() {
           <Header />
           <main>
             <Hero />
+            <Services />
           </main>
         </div>
       </TransitionProvider>
