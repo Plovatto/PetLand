@@ -83,7 +83,7 @@ function Header() {
         initial={{ y: -100 }}
         animate={{ y: isLoading ? -100 : 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed inset-x-0 top-0 z-[9990] border-b border-orange-100 bg-white/90 shadow-lg backdrop-blur-lg"
+        className="fixed inset-x-0 top-0 z-[9990] border-b bg-white/90 shadow-lg backdrop-blur-lg"
       >
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
