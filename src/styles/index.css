@@ -42,3 +42,11 @@ html.lenis {
 section[id] {
   scroll-margin-top: 80px;
 }
+
+@media (pointer: fine) {
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+}
