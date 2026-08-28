@@ -1,22 +1,31 @@
+import { useTranslation } from 'react-i18next'
 import logo from '@/assets/logo.svg'
+import AnimatedText from '@/components/ui/AnimatedText'
 
 function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500">
+            <div
+              data-cursor-invert
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500"
+            >
               <img src={logo} alt="PetLand Logo" className="h-7 w-7" />
             </div>
             <span className="text-xl font-bold">PetLand</span>
           </div>
 
           <div className="flex flex-col items-center gap-2 md:items-end">
-            <p className="text-sm opacity-90">Nos siga em todas as Redes Sociais</p>
+            <p className="text-sm opacity-90">
+              <AnimatedText>{t('footer.followUs')}</AnimatedText>
+            </p>
             <a
               href="#"
-              aria-label="Perfil fictício do PetLand no Instagram"
+              aria-label={t('footer.instagramLabel')}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 transition-opacity hover:opacity-80"
@@ -31,7 +40,7 @@ function Footer() {
 
         <div className="mt-6 border-t pt-6 text-center">
           <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} PetLand. Desenvolvido por Pandora.
+            <AnimatedText>{t('footer.copyright', { year: new Date().getFullYear() })}</AnimatedText>
           </p>
         </div>
       </div>

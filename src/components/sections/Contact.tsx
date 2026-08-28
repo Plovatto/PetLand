@@ -2,6 +2,8 @@ import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+import AnimatedText from '@/components/ui/AnimatedText'
 import { ClockIcon, LocationIcon, PhoneIcon } from '@/components/ui/icons'
 import { useIsLoading } from '@/context/LoadingContext'
 
@@ -46,6 +48,7 @@ type ContactCardProps = {
 function ContactCard({ icon, title, gradientClassName, hoverRotate, children }: ContactCardProps) {
   return (
     <motion.div
+      data-cursor-invert
       className={`rounded-3xl p-8 text-white shadow-xl ${gradientClassName}`}
       variants={itemVariants}
       whileHover={{ scale: 1.02, rotate: hoverRotate, transition: { duration: 0.3 } }}
@@ -58,7 +61,9 @@ function ContactCard({ icon, title, gradientClassName, hoverRotate, children }: 
           {icon}
         </motion.div>
         <div>
-          <h3 className="mb-2 text-xl font-bold">{title}</h3>
+          <h3 className="mb-2 text-xl font-bold">
+            <AnimatedText>{title}</AnimatedText>
+          </h3>
           <p className="opacity-90">{children}</p>
         </div>
       </div>
@@ -68,6 +73,7 @@ function ContactCard({ icon, title, gradientClassName, hoverRotate, children }: 
 
 function Contact() {
   const isLoading = useIsLoading()
+  const { t } = useTranslation()
   const revealed = isLoading ? undefined : 'visible'
 
   const formRef = useRef<HTMLFormElement>(null)
@@ -89,7 +95,7 @@ function Contact() {
       setSubmitStatus('success')
       formRef.current?.reset()
     } catch (error) {
-      console.error('Erro ao enviar email:', error)
+      console.error('Failed to send email:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -111,10 +117,10 @@ function Contact() {
       >
         <motion.div className="mb-12 text-center" variants={itemVariants}>
           <h2 className="mb-4 bg-linear-to-r from-orange-500 to-orange-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
-            Entre em Contato
+            <AnimatedText>{t('contact.title')}</AnimatedText>
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            Tem alguma dúvida? Estamos aqui para ajudar! Envie-nos uma mensagem.
+            <AnimatedText>{t('contact.subtitle')}</AnimatedText>
           </p>
         </motion.div>
 
@@ -123,14 +129,14 @@ function Contact() {
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <motion.div variants={itemVariants}>
                 <label htmlFor="user_name" className="mb-2 block text-sm font-medium text-gray-700">
-                  Nome
+                  <AnimatedText>{t('contact.nameLabel')}</AnimatedText>
                 </label>
                 <motion.input
                   id="user_name"
                   type="text"
                   name="user_name"
                   required
-                  placeholder="Seu nome"
+                  placeholder={t('contact.namePlaceholder')}
                   className="w-full rounded-xl border-2 px-4 py-3 outline-none"
                   variants={inputVariants}
                   initial="initial"
@@ -143,14 +149,14 @@ function Contact() {
                   htmlFor="user_email"
                   className="mb-2 block text-sm font-medium text-gray-700"
                 >
-                  Email
+                  <AnimatedText>{t('contact.emailLabel')}</AnimatedText>
                 </label>
                 <motion.input
                   id="user_email"
                   type="email"
                   name="user_email"
                   required
-                  placeholder="seu@email.com"
+                  placeholder={t('contact.emailPlaceholder')}
                   className="w-full rounded-xl border-2 px-4 py-3 outline-none"
                   variants={inputVariants}
                   initial="initial"
@@ -160,14 +166,14 @@ function Contact() {
 
               <motion.div variants={itemVariants}>
                 <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
-                  Mensagem
+                  <AnimatedText>{t('contact.messageLabel')}</AnimatedText>
                 </label>
                 <motion.textarea
                   id="message"
                   rows={3}
                   name="message"
                   required
-                  placeholder="Sua mensagem..."
+                  placeholder={t('contact.messagePlaceholder')}
                   className="w-full resize-none rounded-xl border-2 px-4 py-3 outline-none"
                   variants={inputVariants}
                   initial="initial"
@@ -181,7 +187,7 @@ function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-green-700"
                 >
-                  Mensagem enviada com sucesso!
+                  <AnimatedText>{t('contact.successMessage')}</AnimatedText>
                 </motion.div>
               )}
 
@@ -191,13 +197,14 @@ function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700"
                 >
-                  Erro ao enviar mensagem. Tente novamente.
+                  <AnimatedText>{t('contact.errorMessage')}</AnimatedText>
                 </motion.div>
               )}
 
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
+                data-cursor-invert
                 className="relative w-full overflow-hidden rounded-xl bg-linear-to-r from-orange-500 to-orange-600 py-4 font-semibold text-white shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
                 variants={itemVariants}
                 whileHover={
@@ -213,7 +220,9 @@ function Contact() {
                   whileHover={{ x: '100%', transition: { duration: 0.6 } }}
                 />
                 <span className="relative z-10">
-                  {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+                  <AnimatedText>
+                    {isSubmitting ? t('contact.submitSending') : t('contact.submitIdle')}
+                  </AnimatedText>
                 </span>
               </motion.button>
             </form>
@@ -222,35 +231,35 @@ function Contact() {
           <motion.div className="space-y-6" variants={containerVariants}>
             <ContactCard
               icon={<LocationIcon className="h-7 w-7 text-white" />}
-              title="Endereço"
+              title={t('contact.addressTitle')}
               gradientClassName="bg-linear-to-br from-orange-500 to-orange-600"
               hoverRotate={[0, -1, 1, 0]}
             >
-              Rua dos Animais, 123
+              <AnimatedText>{t('contact.addressLine1')}</AnimatedText>
               <br />
-              Centro, Taquara - RS
+              <AnimatedText>{t('contact.addressLine2')}</AnimatedText>
             </ContactCard>
 
             <ContactCard
               icon={<PhoneIcon className="h-7 w-7 text-white" />}
-              title="Telefone"
+              title={t('contact.phoneTitle')}
               gradientClassName="bg-linear-to-br from-orange-400 to-orange-500"
               hoverRotate={[0, 1, -1, 0]}
             >
-              WhatsApp: (51) 99448-7156
+              <AnimatedText>{t('contact.phoneWhatsapp')}</AnimatedText>
               <br />
-              Fixo: (51) 3542-7544
+              <AnimatedText>{t('contact.phoneLandline')}</AnimatedText>
             </ContactCard>
 
             <ContactCard
               icon={<ClockIcon className="h-7 w-7 text-white" />}
-              title="Horário"
+              title={t('contact.hoursTitle')}
               gradientClassName="bg-linear-to-br from-orange-600 to-orange-700"
               hoverRotate={[0, -1, 1, 0]}
             >
-              Seg - Sex: 8h às 18h
+              <AnimatedText>{t('contact.hoursWeek')}</AnimatedText>
               <br />
-              Sábado: 9h às 13h
+              <AnimatedText>{t('contact.hoursSaturday')}</AnimatedText>
             </ContactCard>
           </motion.div>
         </div>

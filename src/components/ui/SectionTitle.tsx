@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import AnimatedText from '@/components/ui/AnimatedText'
 import { useIsLoading } from '@/context/LoadingContext'
 
 type SectionTitleProps = {
@@ -42,7 +43,7 @@ function SectionTitle({ title, subtitle }: SectionTitleProps) {
         whileInView={isHeld ? undefined : 'visible'}
         viewport={{ once: false, amount: 0.3 }}
       >
-        {title}
+        <AnimatedText>{title}</AnimatedText>
       </motion.h2>
       {subtitle && (
         <motion.p
@@ -52,7 +53,7 @@ function SectionTitle({ title, subtitle }: SectionTitleProps) {
           whileInView={isHeld ? undefined : 'visible'}
           viewport={{ once: false, amount: 0.3 }}
         >
-          {subtitle}
+          <AnimatedText>{subtitle}</AnimatedText>
         </motion.p>
       )}
     </motion.div>

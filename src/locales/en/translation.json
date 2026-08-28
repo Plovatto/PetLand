@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "titleMain": "Your pet's happiness is our",
+    "titleHighlight": "priority.",
+    "paragraph": "PetLand is a convenient, all-in-one choice for pet owners who want to take care of their pets’ health and well-being. With a wide range of services, you can find everything your pet needs in one place — comfort and convenience for you, happiness and health for them.",
+    "cta": "Learn more"
+  },
+  "services": {
+    "title": "Discover our services:",
+    "subtitle": "Swipe to see all our services",
+    "slideAriaLabel": "Go to slide {{index}}",
+    "items": {
+      "tosa": {
+        "title": "Grooming",
+        "description": "Basic, scissor, clipper, and creative grooming."
+      },
+      "passeio": { "title": "Walking", "description": "20 to 60-minute walks." },
+      "veterinaria": {
+        "title": "Veterinary Care",
+        "description": "Check-ups, emergencies, exams, and vaccines."
+      },
+      "petshop": { "title": "Pet Shop", "description": "Quality products and accessories." },
+      "fotografia": { "title": "Photography", "description": "Professional pet photo shoots." },
+      "banho": {
+        "title": "Bathing",
+        "description": "Regular, dry, flea, and medicated baths."
+      },
+      "hotel": { "title": "Pet Hotel", "description": "Comfortable boarding for your pet." },
+      "farmacia": { "title": "Pharmacy", "description": "Medications and supplements for pets." },
+      "adestramento": {
+        "title": "Training",
+        "description": "Dog training and behavior education."
+      },
+      "alimentacao": {
+        "title": "Nutrition",
+        "description": "Premium kibble and natural food."
+      },
+      "estetica": { "title": "Spa", "description": "Spa treatments, hydration, and special care." },
+      "transporte": { "title": "Transport", "description": "Pickup and drop-off for your pet." }
+    }
+  },
+  "about": {
+    "title": "About us:",
+    "address": "We're located at Rua dos Animais, 123 - Centro, Taquara",
+    "phoneIntro": "Pickup service and appointment scheduling by phone:",
+    "whatsapp": "WhatsApp: 51 994487156",
+    "phone": "Phone: 51 3542 7544",
+    "hoursIntro": "Business hours:",
+    "hoursWeek": "Monday to Friday, 8am to 6pm;",
+    "hoursSaturday": "Saturdays, 9am to 1pm",
+    "paragraph1": "When you choose PetLand, you can be sure every detail is carefully considered. We work only with high-quality products and trusted brands, making sure your pet gets the best care possible. Our team is made up entirely of qualified, experienced professionals.",
+    "paragraph2": "That's why we're confident choosing our petshop is the right call for your pet's well-being and happiness. Come visit us and get to know our space, our products, and our team. We can't wait to welcome you and care for your pet with all the love and dedication they deserve."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question? We're here to help! Send us a message.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message...",
+    "submitIdle": "Send Message",
+    "submitSending": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Error sending message. Please try again.",
+    "addressTitle": "Address",
+    "addressLine1": "Rua dos Animais, 123",
+    "addressLine2": "Centro, Taquara - RS, Brazil",
+    "phoneTitle": "Phone",
+    "phoneWhatsapp": "WhatsApp: (51) 99448-7156",
+    "phoneLandline": "Landline: (51) 3542-7544",
+    "hoursTitle": "Hours",
+    "hoursWeek": "Mon - Fri: 8am to 6pm",
+    "hoursSaturday": "Saturday: 9am to 1pm"
+  },
+  "footer": {
+    "followUs": "Follow us on social media",
+    "instagramLabel": "PetLand's fictional Instagram profile",
+    "copyright": "© {{year}} PetLand. Built by Pandora."
+  },
+  "loader": {
+    "welcome": "Welcome to PetLand"
+  }
+}

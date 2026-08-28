@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Autoplay, EffectCoverflow } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperClass } from 'swiper/types'
@@ -28,6 +29,7 @@ const paginationVariants = {
 
 function Services() {
   const isHeld = useIsLoading()
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
   const [swiper, setSwiper] = useState<SwiperClass | null>(null)
 
@@ -38,10 +40,7 @@ function Services() {
   return (
     <section id="servicos" className="bg-muted overflow-hidden py-6 md:py-8">
       <div className="container mx-auto px-2">
-        <SectionTitle
-          title="Conheça nossos serviços:"
-          subtitle="Deslize para ver todos os nossos serviços"
-        />
+        <SectionTitle title={t('services.title')} subtitle={t('services.subtitle')} />
 
         <motion.div
           variants={carouselVariants}
@@ -80,8 +79,12 @@ function Services() {
             }}
           >
             {SERVICES.map((service) => (
-              <SwiperSlide key={service.title}>
-                <ServiceCard service={service} />
+              <SwiperSlide key={service.id}>
+                <ServiceCard
+                  image={service.image}
+                  title={t(`services.items.${service.id}.title`)}
+                  description={t(`services.items.${service.id}.description`)}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -96,14 +99,14 @@ function Services() {
         >
           {SERVICES.map((service, index) => (
             <motion.button
-              key={service.title}
+              key={service.id}
               onClick={() => handlePaginationClick(index)}
               className={`rounded-full transition-all duration-300 ${
                 activeIndex === index
                   ? 'bg-primary h-2.5 w-2.5 shadow-lg'
                   : 'hover:bg-primary h-2 w-2 bg-gray-400'
               }`}
-              aria-label={`Ir para o slide ${index + 1}`}
+              aria-label={t('services.slideAriaLabel', { index: index + 1 })}
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}
               animate={activeIndex === index ? { scale: [1, 1.2, 1] } : undefined}

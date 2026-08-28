@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "hero": {
+    "titleMain": "A felicidade do seu animal de estimação é a nossa",
+    "titleHighlight": "prioridade.",
+    "paragraph": "O Petland petshop é uma opção conveniente e completa para os donos de animais de estimação, que desejam cuidar da saúde e do bem-estar dos seus pets. Com uma variedade de serviços, é possível encontrar tudo o que o animal precisa em um único lugar, garantindo comodidade e praticidade para o dono e felicidade e saúde para o animal.",
+    "cta": "Saiba mais"
+  },
+  "services": {
+    "title": "Conheça nossos serviços:",
+    "subtitle": "Deslize para ver todos os nossos serviços",
+    "slideAriaLabel": "Ir para o slide {{index}}",
+    "items": {
+      "tosa": { "title": "Tosa", "description": "Tosa simples, a tesoura, a máquina e criativa." },
+      "passeio": { "title": "Passeio", "description": "Passeios de 20 a 60 minutos." },
+      "veterinaria": {
+        "title": "Veterinária",
+        "description": "Consultas, emergências, exames e vacinas."
+      },
+      "petshop": { "title": "Pet Shop", "description": "Produtos e acessórios de qualidade." },
+      "fotografia": { "title": "Fotografia", "description": "Ensaios fotográficos profissionais." },
+      "banho": {
+        "title": "Banho",
+        "description": "Banho simples, a seco, antipulgas e medicinal."
+      },
+      "hotel": { "title": "Hotel", "description": "Hospedagem confortável para seu pet." },
+      "farmacia": { "title": "Farmácia", "description": "Medicamentos e suplementos para pets." },
+      "adestramento": { "title": "Adestramento", "description": "Treinamento e educação canina." },
+      "alimentacao": {
+        "title": "Alimentação",
+        "description": "Rações premium e alimentação natural."
+      },
+      "estetica": {
+        "title": "Estética",
+        "description": "Spa, hidratação e tratamentos especiais."
+      },
+      "transporte": { "title": "Transporte", "description": "Busca e entrega do seu pet." }
+    }
+  },
+  "about": {
+    "title": "Sobre nós:",
+    "address": "Atendemos na Rua dos Animais, 123 - Centro, Cidade - Taquara",
+    "phoneIntro": "Serviço de tele busca e agendamento pelo telefone:",
+    "whatsapp": "WhatsApp: 51 994487156",
+    "phone": "Telefone: 51 3542 7544",
+    "hoursIntro": "Horário de funcionamento:",
+    "hoursWeek": "De segunda a sexta, das 8h às 18h;",
+    "hoursSaturday": "Sábados, das 9h às 13h",
+    "paragraph1": "Ao escolher o PetLand, você pode ter certeza de que todos os aspectos serão cuidadosamente avaliados e levados em consideração. Nós trabalhamos apenas com produtos de alta qualidade e marcas reconhecidas no mercado, garantindo que seu animal de estimação receba os melhores cuidados possíveis. Além disso, nossa equipe é formada apenas por profissionais qualificados e experientes.",
+    "paragraph2": "Por tudo isso, estamos confiantes de que escolher o nosso petshop é a escolha certa para garantir o bem-estar e a felicidade do seu animal de estimação. Venha nos visitar e conhecer nossos espaços, nossos produtos e nossa equipe de profissionais. Estamos ansiosos para recebê-lo e para cuidar do seu animal com todo o carinho e dedicação que ele merece."
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Tem alguma dúvida? Estamos aqui para ajudar! Envie-nos uma mensagem.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "seu@email.com",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Sua mensagem...",
+    "submitIdle": "Enviar Mensagem",
+    "submitSending": "Enviando...",
+    "successMessage": "Mensagem enviada com sucesso!",
+    "errorMessage": "Erro ao enviar mensagem. Tente novamente.",
+    "addressTitle": "Endereço",
+    "addressLine1": "Rua dos Animais, 123",
+    "addressLine2": "Centro, Taquara - RS",
+    "phoneTitle": "Telefone",
+    "phoneWhatsapp": "WhatsApp: (51) 99448-7156",
+    "phoneLandline": "Fixo: (51) 3542-7544",
+    "hoursTitle": "Horário",
+    "hoursWeek": "Seg - Sex: 8h às 18h",
+    "hoursSaturday": "Sábado: 9h às 13h"
+  },
+  "footer": {
+    "followUs": "Nos siga em todas as Redes Sociais",
+    "instagramLabel": "Perfil fictício do PetLand no Instagram",
+    "copyright": "© {{year}} PetLand. Desenvolvido por Pandora."
+  },
+  "loader": {
+    "welcome": "Bem-vindo a PetLand"
+  }
+}

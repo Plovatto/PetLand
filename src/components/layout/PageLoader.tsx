@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import logo from '@/assets/logo.svg'
+import AnimatedText from '@/components/ui/AnimatedText'
 import { useIsLoading } from '@/context/LoadingContext'
 
 const containerVariants: Variants = {
@@ -24,6 +26,7 @@ const textVariants: Variants = {
 
 function PageLoader() {
   const isLoading = useIsLoading()
+  const { t } = useTranslation()
 
   return (
     <AnimatePresence>
@@ -61,7 +64,9 @@ function PageLoader() {
             animate="animate"
             className="mt-15 text-center"
           >
-            <h2 className="mb-2 text-3xl font-bold text-orange-600">Bem-vindo a PetLand</h2>
+            <h2 className="mb-2 text-3xl font-bold text-orange-600">
+              <AnimatedText>{t('loader.welcome')}</AnimatedText>
+            </h2>
             <motion.div
               className="flex justify-center gap-2"
               initial={{ opacity: 0 }}

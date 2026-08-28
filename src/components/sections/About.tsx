@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import type { ReactNode } from 'react'
 import cat from '@/assets/cat.webp'
+import AnimatedText from '@/components/ui/AnimatedText'
 import { ClockIcon, LocationIcon, PhoneIcon } from '@/components/ui/icons'
+
 import { useIsLoading } from '@/context/LoadingContext'
 
 const EXIT_TRANSITION = { duration: 0.4, ease: 'easeInOut' } as const
@@ -80,6 +83,7 @@ function InfoItem({ icon, children }: InfoItemProps) {
 
 function About() {
   const isLoading = useIsLoading()
+  const { t } = useTranslation()
   const revealed = isLoading ? undefined : 'visible'
 
   return (
@@ -92,7 +96,9 @@ function About() {
           whileInView={revealed}
           viewport={{ once: false }}
         >
-          <h2 className="text-primary pb-2 text-3xl font-bold">Sobre nós:</h2>
+          <h2 className="text-primary pb-2 text-3xl font-bold">
+            <AnimatedText>{t('about.title')}</AnimatedText>
+          </h2>
         </motion.div>
 
         <div className="flex flex-col-reverse gap-4 lg:grid lg:grid-cols-2 lg:gap-12">
@@ -112,22 +118,32 @@ function About() {
             >
               <InfoItem icon={<LocationIcon className="h-5 w-5 text-white" />}>
                 <p className="text-foreground font-medium">
-                  Atendemos na Rua dos Animais, 123 - Centro, Cidade - Taquara
+                  <AnimatedText>{t('about.address')}</AnimatedText>
                 </p>
               </InfoItem>
 
               <InfoItem icon={<PhoneIcon className="h-5 w-5 text-white" />}>
                 <p className="text-foreground mb-1 font-medium">
-                  Serviço de tele busca e agendamento pelo telefone:
+                  <AnimatedText>{t('about.phoneIntro')}</AnimatedText>
                 </p>
-                <p className="text-muted-foreground">WhatsApp: 51 994487156</p>
-                <p className="text-muted-foreground">Telefone: 51 3542 7544</p>
+                <p className="text-muted-foreground">
+                  <AnimatedText>{t('about.whatsapp')}</AnimatedText>
+                </p>
+                <p className="text-muted-foreground">
+                  <AnimatedText>{t('about.phone')}</AnimatedText>
+                </p>
               </InfoItem>
 
               <InfoItem icon={<ClockIcon className="h-5 w-5 text-white" />}>
-                <p className="text-foreground mb-1 font-medium">Horário de funcionamento:</p>
-                <p className="text-muted-foreground">De segunda a sexta, das 8h às 18h;</p>
-                <p className="text-muted-foreground">Sábados, das 9h às 13h</p>
+                <p className="text-foreground mb-1 font-medium">
+                  <AnimatedText>{t('about.hoursIntro')}</AnimatedText>
+                </p>
+                <p className="text-muted-foreground">
+                  <AnimatedText>{t('about.hoursWeek')}</AnimatedText>
+                </p>
+                <p className="text-muted-foreground">
+                  <AnimatedText>{t('about.hoursSaturday')}</AnimatedText>
+                </p>
               </InfoItem>
             </motion.div>
           </motion.div>
@@ -168,11 +184,7 @@ function About() {
                   whileInView={revealed}
                   viewport={{ once: false }}
                 >
-                  Ao escolher o PetLand, você pode ter certeza de que todos os aspectos serão
-                  cuidadosamente avaliados e levados em consideração. Nós trabalhamos apenas com
-                  produtos de alta qualidade e marcas reconhecidas no mercado, garantindo que seu
-                  animal de estimação receba os melhores cuidados possíveis. Além disso, nossa
-                  equipe é formada apenas por profissionais qualificados e experientes.
+                  <AnimatedText>{t('about.paragraph1')}</AnimatedText>
                 </motion.p>
                 <motion.p
                   className="text-muted-foreground text-xs leading-relaxed md:text-base"
@@ -181,11 +193,7 @@ function About() {
                   whileInView={revealed}
                   viewport={{ once: false }}
                 >
-                  Por tudo isso, estamos confiantes de que escolher o nosso petshop é a escolha
-                  certa para garantir o bem-estar e a felicidade do seu animal de estimação. Venha
-                  nos visitar e conhecer nossos espaços, nossos produtos e nossa equipe de
-                  profissionais. Estamos ansiosos para recebê-lo e para cuidar do seu animal com
-                  todo o carinho e dedicação que ele merece.
+                  <AnimatedText>{t('about.paragraph2')}</AnimatedText>
                 </motion.p>
               </div>
             </div>

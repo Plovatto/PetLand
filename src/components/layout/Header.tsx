@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import logo from '@/assets/logo.svg'
+import AnimatedText from '@/components/ui/AnimatedText'
+import LanguageToggle from '@/components/ui/LanguageToggle'
 import { NAV_LINKS } from '@/constants/navigation'
 import { useIsLoading } from '@/context/LoadingContext'
 import { useTransition } from '@/context/TransitionContext'
@@ -10,6 +13,7 @@ const SECTION_IDS = NAV_LINKS.map((link) => link.href)
 
 function Header() {
   const isLoading = useIsLoading()
+  const { t } = useTranslation()
   const { isTransitioning, startTransition } = useTransition()
   const activeLink = useActiveSection(SECTION_IDS)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -88,7 +92,10 @@ function Header() {
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500">
+              <div
+                data-cursor-invert
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500"
+              >
                 <img src={logo} alt="PetLand Logo" className="h-6 w-6" />
               </div>
               <span className="bg-linear-to-r from-orange-500 to-orange-600 bg-clip-text text-2xl font-bold text-transparent">
@@ -96,49 +103,53 @@ function Header() {
               </span>
             </div>
 
-            <button
-              onClick={() => setIsMobileMenuOpen((open) => !open)}
-              className="p-2 text-gray-700 transition hover:text-orange-600 md:hidden"
-              aria-label="Menu"
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
+            <div className="flex items-center">
+              <ul className="hidden space-x-8 md:mr-5 md:flex">
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={(event) => handleNavClick(event, link.href)}
+                      className={`font-medium transition ${
+                        activeLink === link.href
+                          ? 'text-orange-600'
+                          : 'text-gray-700 hover:text-orange-600'
+                      }`}
+                    >
+                      <AnimatedText>{t(`nav.${link.key}`)}</AnimatedText>
+                    </a>
+                  </li>
+                ))}
+              </ul>
 
-            <ul className="hidden space-x-8 md:flex">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={(event) => handleNavClick(event, link.href)}
-                    className={`font-medium transition ${
-                      activeLink === link.href
-                        ? 'text-orange-600'
-                        : 'text-gray-700 hover:text-orange-600'
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+              <LanguageToggle />
+
+              <button
+                onClick={() => setIsMobileMenuOpen((open) => !open)}
+                className="ml-2 p-2 text-gray-700 transition hover:text-orange-600 md:hidden"
+                aria-label="Menu"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+              >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {isMobileMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
 
           <AnimatePresence>
@@ -161,13 +172,14 @@ function Header() {
                     <a
                       href={link.href}
                       onClick={(event) => handleNavClick(event, link.href)}
+                      data-cursor-invert={activeLink === link.href || undefined}
                       className={`block rounded-lg px-4 py-2 transition ${
                         activeLink === link.href
                           ? 'bg-orange-500 text-white'
                           : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600'
                       }`}
                     >
-                      {link.label}
+                      <AnimatedText>{t(`nav.${link.key}`)}</AnimatedText>
                     </a>
                   </motion.li>
                 ))}
