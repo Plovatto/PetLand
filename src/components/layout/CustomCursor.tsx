@@ -1,7 +1,9 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
-const INTERACTIVE_SELECTOR = 'a, button, input, textarea, [role="button"]'
+const INTERACTIVE_SELECTOR = 'a, button, [role="button"]'
+const TEXT_FIELD_SELECTOR = 'input, textarea'
 const RING_SPRING = { damping: 30, stiffness: 300, mass: 0.5 }
 const TRAIL_MIN_DISTANCE = 28
 const TRAIL_LIFETIME_MS = 1400
@@ -26,8 +28,10 @@ function PawIcon({ className }: { className?: string }) {
 }
 
 function CustomCursor() {
+  const prefersReducedMotion = usePrefersReducedMotion()
   const [isVisible, setIsVisible] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
+  const [isOverTextField, setIsOverTextField] = useState(false)
   const [trail, setTrail] = useState<PawPrint[]>([])
 
   const cursorX = useMotionValue(0)
@@ -37,13 +41,18 @@ function CustomCursor() {
 
   const lastTrailPoint = useRef({ x: 0, y: 0 })
   const nextTrailId = useRef(0)
+  const isOverTextFieldRef = useRef(false)
 
   useEffect(() => {
+    if (prefersReducedMotion) return
+
     const handlePointerMove = (event: PointerEvent) => {
       if (event.pointerType !== 'mouse') return
       setIsVisible(true)
       cursorX.set(event.clientX)
       cursorY.set(event.clientY)
+
+      if (isOverTextFieldRef.current) return
 
       const dx = event.clientX - lastTrailPoint.current.x
       const dy = event.clientY - lastTrailPoint.current.y
@@ -68,7 +77,10 @@ function CustomCursor() {
     const handlePointerOver = (event: PointerEvent) => {
       if (event.pointerType !== 'mouse') return
       const target = event.target as HTMLElement
-      setIsHovering(Boolean(target.closest(INTERACTIVE_SELECTOR)))
+      const overTextField = Boolean(target.closest(TEXT_FIELD_SELECTOR))
+      isOverTextFieldRef.current = overTextField
+      setIsOverTextField(overTextField)
+      setIsHovering(!overTextField && Boolean(target.closest(INTERACTIVE_SELECTOR)))
     }
 
     const handlePointerLeave = () => setIsVisible(false)
@@ -82,9 +94,9 @@ function CustomCursor() {
       window.removeEventListener('pointerover', handlePointerOver)
       document.documentElement.removeEventListener('pointerleave', handlePointerLeave)
     }
-  }, [cursorX, cursorY])
+  }, [cursorX, cursorY, prefersReducedMotion])
 
-  if (!isVisible) return null
+  if (prefersReducedMotion || !isVisible) return null
 
   return (
     <>
@@ -107,23 +119,33 @@ function CustomCursor() {
         </motion.div>
       ))}
 
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[10000] text-[#FF6F31]"
-        style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
-      >
-        <PawIcon className="h-5 w-5" />
-      </motion.div>
+      {!isOverTextField && (
+        <>
+          <motion.div
+            className="pointer-events-none fixed top-0 left-0 z-[10000] text-[#FF6F31]"
+            style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
+          >
+            <PawIcon className="h-5 w-5" />
+          </motion.div>
 
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[10000] rounded-full border-2 border-[#FF6F31]/60"
-        style={{ x: ringX, y: ringY, translateX: '-50%', translateY: '-50%' }}
-        animate={{
-          width: isHovering ? 56 : 32,
-          height: isHovering ? 56 : 32,
-          opacity: isHovering ? 0.8 : 0.5,
-        }}
-        transition={{ duration: 0.2 }}
-      />
+          <motion.div
+            className="pointer-events-none fixed top-0 left-0 z-[10000] rounded-full border-2"
+            style={{
+              x: ringX,
+              y: ringY,
+              translateX: '-50%',
+              translateY: '-50%',
+              borderColor: 'rgba(255, 111, 49, 0.6)',
+            }}
+            animate={{
+              width: isHovering ? 56 : 32,
+              height: isHovering ? 56 : 32,
+              opacity: isHovering ? 0.8 : 0.5,
+            }}
+            transition={{ duration: 0.2 }}
+          />
+        </>
+      )}
     </>
   )
 }

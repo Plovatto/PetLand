@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
-import cat from '@/assets/cat.svg'
+import cat from '@/assets/cat.webp'
 import { ClockIcon, LocationIcon, PhoneIcon } from '@/components/ui/icons'
 import { useIsLoading } from '@/context/LoadingContext'
 
