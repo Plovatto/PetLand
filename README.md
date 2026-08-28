@@ -1,43 +1,64 @@
-# 🐾 PetLand
+# PetLand
 
-Landing page responsiva desenvolvida para um petshop fictício, com foco em uma experiência moderna, agradável e intuitiva.
+[Português](README.md) | [English](README.en.md)
 
-O projeto foi criado como parte do meu portfólio pessoal para praticar desenvolvimento front-end, responsividade, organização de componentes e construção de interfaces modernas.
+Landing page responsiva desenvolvida para um petshop fictício, com foco em uma experiência moderna, agradável, acessível e intuitiva.
+
+O projeto foi criado como parte do meu portfólio pessoal para praticar desenvolvimento front-end, responsividade, organização de componentes, internacionalização e publicação de aplicações React.
 
 > **Nota:** Este é um projeto fictício e não representa uma empresa real.
 
-## ✨ Funcionalidades
+## Demo
 
-* Layout responsivo para diferentes tamanhos de tela
-* Navegação fluida entre as seções
-* Animações e transições de interface
-* Smooth scroll
-* Apresentação de serviços em carrossel
-* Formulário de contato integrado ao EmailJS
-* Componentes reutilizáveis
-* Interface desenvolvida com foco em usabilidade e experiência do usuário
+O projeto pode ser publicado pelo GitHub Pages em:
 
-## 🛠️ Tecnologias
+```text
+https://plovatto.github.io/PetLand/
+```
 
-* [React](https://react.dev/) 19
-* [TypeScript](https://www.typescriptlang.org/)
-* [Vite](https://vite.dev/)
-* [Tailwind CSS](https://tailwindcss.com/) 4
-* [Motion](https://motion.dev/) — animações e transições
-* [Lenis](https://lenis.darkroom.engineering/) — smooth scroll
-* [EmailJS](https://www.emailjs.com/) — envio do formulário de contato
-* [Swiper](https://swiperjs.com/) — carrossel de serviços
-* ESLint — análise e padronização do código
-* Prettier — formatação do código
+## Funcionalidades
 
-## 🚀 Como executar o projeto
+- Layout responsivo para diferentes tamanhos de tela
+- Navegação fluida entre seções
+- Animações e microinterações com suporte a redução de movimento
+- Smooth scroll com Lenis
+- Cursor personalizado
+- Page loader
+- Seção Hero
+- Seção de serviços com carrossel
+- Seção Sobre
+- Seção de contato com formulário integrado ao EmailJS
+- Footer com identidade visual da marca
+- Internacionalização em português e inglês
+- Troca de idioma com persistência local
+- Assets otimizados em WebP
+- Deploy automatizado com GitHub Actions e GitHub Pages
+
+## Tecnologias
+
+- [React](https://react.dev/) 19
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [Framer Motion](https://motion.dev/) - animações e transições
+- [Lenis](https://lenis.darkroom.engineering/) - smooth scroll
+- [EmailJS](https://www.emailjs.com/) - envio do formulário de contato
+- [Swiper](https://swiperjs.com/) - carrossel de serviços
+- [i18next](https://www.i18next.com/) - internacionalização
+- [react-i18next](https://react.i18next.com/) - integração do i18n com React
+- ESLint - análise e padronização do código
+- Prettier - formatação do código
+- GitHub Actions - deploy automatizado
+- GitHub Pages - hospedagem
+
+## Como Executar
 
 ### Pré-requisitos
 
 Antes de começar, tenha instalado:
 
-* [Node.js](https://nodejs.org/)
-* npm
+- [Node.js](https://nodejs.org/)
+- npm
 
 ### Instalação
 
@@ -50,7 +71,7 @@ git clone https://github.com/Plovatto/PetLand.git
 Acesse a pasta do projeto:
 
 ```bash
-cd petland
+cd PetLand
 ```
 
 Instale as dependências:
@@ -77,7 +98,7 @@ O projeto estará disponível em:
 http://localhost:5173
 ```
 
-## 🔐 Variáveis de ambiente
+## Variáveis de Ambiente
 
 As variáveis são definidas no arquivo `.env.local`, que não deve ser versionado.
 
@@ -89,7 +110,7 @@ VITE_EMAILJS_TEMPLATE_ID=
 VITE_EMAILJS_PUBLIC_KEY=
 ```
 
-## 📜 Scripts
+## Scripts
 
 | Comando                | Descrição                                              |
 | ---------------------- | ------------------------------------------------------ |
@@ -100,37 +121,62 @@ VITE_EMAILJS_PUBLIC_KEY=
 | `npm run format`       | Formata o código com Prettier                          |
 | `npm run format:check` | Verifica a formatação sem alterar os arquivos          |
 
-## 📁 Estrutura do projeto
+## Estrutura do Projeto
 
 ```text
 src/
 ├── assets/                 # Imagens e SVGs utilizados pelos componentes
 ├── components/
-│   ├── layout/             # Componentes estruturais, como Header e Footer
+│   ├── layout/             # Componentes estruturais, como Header, Footer e PageLoader
 │   ├── sections/           # Seções da página, como Hero, Services, About e Contact
-│   └── ui/                 # Componentes reutilizáveis, como Button e SectionTitle
-├── constants/              # Dados estáticos, links, serviços e informações de contato
+│   └── ui/                 # Componentes reutilizáveis, como AnimatedText e LanguageToggle
+├── constants/              # Dados estáticos, links e configurações de seções
+├── context/                # Contextos globais da aplicação
 ├── hooks/                  # Hooks customizados
-├── lib/                    # Integrações e funções utilitárias
-├── types/                  # Tipos TypeScript compartilhados
+├── lib/                    # Funções utilitárias
+├── locales/                # Arquivos de tradução
+│   ├── en/
+│   └── pt/
 ├── styles/
 │   └── index.css           # Estilos globais e configuração do Tailwind CSS
 ├── App.tsx
+├── i18n.ts
 └── main.tsx
 ```
 
-## 🎯 Objetivos do projeto
+## Deploy
+
+O deploy é feito com GitHub Actions para o GitHub Pages.
+
+O workflow está em:
+
+```text
+.github/workflows/deploy.yml
+```
+
+O Vite usa `base: '/PetLand/'` para gerar os caminhos corretos dos assets no GitHub Pages.
+
+Para publicar, configure no GitHub:
+
+```text
+Settings > Pages > Build and deployment > Source: GitHub Actions
+```
+
+A cada push na branch `main`, o workflow gera o build e publica a pasta `dist`.
+
+## Objetivos do Projeto
 
 O PetLand foi desenvolvido com o objetivo de praticar e demonstrar conhecimentos em:
 
-* Desenvolvimento de interfaces com React e TypeScript
-* Criação de layouts responsivos
-* Componentização e reutilização de código
-* Organização de projetos front-end
-* Animações e microinterações
-* Integração com serviços externos
-* Boas práticas de desenvolvimento
-
-## 📄 Licença
+- Desenvolvimento de interfaces com React e TypeScript
+- Criação de layouts responsivos
+- Componentização e reutilização de código
+- Organização de projetos front-end
+- Animações e microinterações
+- Acessibilidade e preferências de movimento
+- Internacionalização de interfaces
+- Integração com serviços externos
+- Deploy automatizado
+- Boas práticas de Git e GitHub
 
 Este projeto foi desenvolvido para fins de estudo e portfólio.
