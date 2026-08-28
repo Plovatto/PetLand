@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import dog from '@/assets/dog.webp'
+import AnimatedText from '@/components/ui/AnimatedText'
 import { useIsLoading } from '@/context/LoadingContext'
 import { scrollToSection } from '@/lib/scroll'
-
-const TITLE = 'A felicidade do seu animal de estimação é a nossa'
-const TITLE_WORDS = TITLE.split(' ')
 
 const EXIT_TRANSITION = { duration: 0.4, ease: 'easeInOut' } as const
 
@@ -44,18 +43,20 @@ const wordVariants = {
   }),
 }
 
-const priorityVariants = {
-  hidden: { opacity: 0, scale: 0, transition: EXIT_TRANSITION },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      type: 'spring' as const,
-      damping: 10,
-      stiffness: 100,
-      delay: TITLE_WORDS.length * 0.1 + 0.3,
+function getPriorityVariants(wordCount: number) {
+  return {
+    hidden: { opacity: 0, scale: 0, transition: EXIT_TRANSITION },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: 'spring' as const,
+        damping: 10,
+        stiffness: 100,
+        delay: wordCount * 0.1 + 0.3,
+      },
     },
-  },
+  }
 }
 
 const paragraphVariants = {
@@ -81,7 +82,10 @@ const buttonVariants = {
 
 function Hero() {
   const isHeld = useIsLoading()
+  const { t } = useTranslation()
   const revealKey = isHeld ? 'held' : 'revealed'
+  const titleWords = t('hero.titleMain').split(' ')
+  const priorityVariants = getPriorityVariants(titleWords.length)
 
   return (
     <section id="home" className="relative overflow-hidden py-25 md:py-15">
@@ -122,9 +126,9 @@ function Hero() {
 
           <motion.div className="flex-1 text-center md:text-left" variants={textVariants}>
             <h1 className="text-foreground mb-6 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl">
-              {TITLE_WORDS.map((word, i) => (
+              {titleWords.map((word, i) => (
                 <motion.span
-                  key={word}
+                  key={`${word}-${i}`}
                   custom={i}
                   variants={wordVariants}
                   initial="hidden"
@@ -142,7 +146,7 @@ function Hero() {
                 whileInView={isHeld ? undefined : 'visible'}
                 viewport={{ once: false }}
               >
-                prioridade.
+                <AnimatedText>{t('hero.titleHighlight')}</AnimatedText>
               </motion.span>
             </h1>
 
@@ -153,14 +157,12 @@ function Hero() {
               whileInView={isHeld ? undefined : 'visible'}
               viewport={{ once: false }}
             >
-              O Petland petshop é uma opção conveniente e completa para os donos de animais de
-              estimação, que desejam cuidar da saúde e do bem-estar dos seus pets. Com uma variedade
-              de serviços, é possível encontrar tudo o que o animal precisa em um único lugar,
-              garantindo comodidade e praticidade para o dono e felicidade e saúde para o animal.
+              <AnimatedText>{t('hero.paragraph')}</AnimatedText>
             </motion.p>
 
             <motion.button
               onClick={() => scrollToSection('#sobre')}
+              data-cursor-invert
               className="relative cursor-pointer overflow-hidden rounded-lg bg-[#FF6F31] px-8 py-4 font-semibold text-white shadow-md"
               variants={buttonVariants}
               initial="hidden"
@@ -174,7 +176,9 @@ function Hero() {
                 initial={{ x: '-100%', skewX: -15 }}
                 whileHover={{ x: '100%', transition: { duration: 0.6 } }}
               />
-              <span className="relative z-10">Saiba mais</span>
+              <span className="relative z-10">
+                <AnimatedText>{t('hero.cta')}</AnimatedText>
+              </span>
             </motion.button>
           </motion.div>
         </div>
