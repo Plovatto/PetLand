@@ -110,7 +110,7 @@ function Contact() {
         viewport={{ once: false, amount: 0.3 }}
       >
         <motion.div className="mb-12 text-center" variants={itemVariants}>
-          <h2 className="bg-linear-to-r from-orange-500 to-orange-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+          <h2 className="mb-4 bg-linear-to-r from-orange-500 to-orange-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
             Entre em Contato
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
@@ -122,8 +122,11 @@ function Contact() {
           <motion.div className="rounded-3xl bg-white p-8 shadow-xl" variants={itemVariants}>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <motion.div variants={itemVariants}>
-                <label className="mb-2 block text-sm font-medium text-gray-700">Nome</label>
+                <label htmlFor="user_name" className="mb-2 block text-sm font-medium text-gray-700">
+                  Nome
+                </label>
                 <motion.input
+                  id="user_name"
                   type="text"
                   name="user_name"
                   required
@@ -136,8 +139,14 @@ function Contact() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <label className="mb-2 block text-sm font-medium text-gray-700">Email</label>
+                <label
+                  htmlFor="user_email"
+                  className="mb-2 block text-sm font-medium text-gray-700"
+                >
+                  Email
+                </label>
                 <motion.input
+                  id="user_email"
                   type="email"
                   name="user_email"
                   required
@@ -150,8 +159,11 @@ function Contact() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <label className="mb-2 block text-sm font-medium text-gray-700">Mensagem</label>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
+                  Mensagem
+                </label>
                 <motion.textarea
+                  id="message"
                   rows={3}
                   name="message"
                   required

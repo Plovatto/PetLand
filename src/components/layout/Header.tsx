@@ -100,6 +100,8 @@ function Header() {
               onClick={() => setIsMobileMenuOpen((open) => !open)}
               className="p-2 text-gray-700 transition hover:text-orange-600 md:hidden"
               aria-label="Menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMobileMenuOpen ? (
@@ -142,6 +144,7 @@ function Header() {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.ul
+                id="mobile-menu"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
