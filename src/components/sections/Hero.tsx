@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import dog from '@/assets/dog.svg'
+import dog from '@/assets/dog.webp'
 import { useIsLoading } from '@/context/LoadingContext'
 import { scrollToSection } from '@/lib/scroll'
 
