@@ -4,9 +4,12 @@ import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
 const INTERACTIVE_SELECTOR = 'a, button, [role="button"]'
 const TEXT_FIELD_SELECTOR = 'input, textarea'
+const INVERT_BG_SELECTOR = '[data-cursor-invert]'
 const RING_SPRING = { damping: 30, stiffness: 300, mass: 0.5 }
 const TRAIL_MIN_DISTANCE = 28
 const TRAIL_LIFETIME_MS = 1400
+const CURSOR_COLOR = '#FF6F31'
+const CURSOR_COLOR_INVERTED = '#FFFFFF'
 
 type PawPrint = {
   id: number
@@ -32,6 +35,7 @@ function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
   const [isOverTextField, setIsOverTextField] = useState(false)
+  const [isOverInvertBg, setIsOverInvertBg] = useState(false)
   const [trail, setTrail] = useState<PawPrint[]>([])
 
   const cursorX = useMotionValue(0)
@@ -81,6 +85,7 @@ function CustomCursor() {
       isOverTextFieldRef.current = overTextField
       setIsOverTextField(overTextField)
       setIsHovering(!overTextField && Boolean(target.closest(INTERACTIVE_SELECTOR)))
+      setIsOverInvertBg(Boolean(target.closest(INVERT_BG_SELECTOR)))
     }
 
     const handlePointerLeave = () => setIsVisible(false)
@@ -122,8 +127,13 @@ function CustomCursor() {
       {!isOverTextField && (
         <>
           <motion.div
-            className="pointer-events-none fixed top-0 left-0 z-[10000] text-[#FF6F31]"
+            className="pointer-events-none fixed top-0 left-0 z-[10000]"
             style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
+            animate={{
+              scale: isHovering ? 1.25 : 1,
+              color: isOverInvertBg ? CURSOR_COLOR_INVERTED : CURSOR_COLOR,
+            }}
+            transition={{ duration: 0.2 }}
           >
             <PawIcon className="h-5 w-5" />
           </motion.div>
@@ -135,12 +145,17 @@ function CustomCursor() {
               y: ringY,
               translateX: '-50%',
               translateY: '-50%',
-              borderColor: 'rgba(255, 111, 49, 0.6)',
             }}
             animate={{
               width: isHovering ? 56 : 32,
               height: isHovering ? 56 : 32,
-              opacity: isHovering ? 0.8 : 0.5,
+              opacity: isHovering ? 0.9 : 0.5,
+              borderColor: isOverInvertBg ? 'rgba(255, 255, 255, 0.85)' : 'rgba(255, 111, 49, 0.6)',
+              backgroundColor: isHovering
+                ? isOverInvertBg
+                  ? 'rgba(255, 255, 255, 0.2)'
+                  : 'rgba(255, 111, 49, 0.15)'
+                : 'rgba(255, 111, 49, 0)',
             }}
             transition={{ duration: 0.2 }}
           />
