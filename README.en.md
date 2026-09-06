@@ -2,6 +2,10 @@
 
 [Português](README.md) | [English](README.en.md)
 
+[![PetLand landing page preview](.github/assets/hero.jpg)](https://plovatto.github.io/PetLand/)
+
+<p align="center"><a href="https://plovatto.github.io/PetLand/"><strong>View the live project →</strong></a></p>
+
 Responsive landing page developed for a fictional pet shop, focused on a modern, pleasant, accessible, and intuitive experience.
 
 This project was created as part of my personal portfolio to practice front-end development, responsiveness, component organization, internationalization, and React application deployment.
@@ -10,11 +14,11 @@ This project was created as part of my personal portfolio to practice front-end 
 
 ## Demo
 
-The project can be published with GitHub Pages at:
+The project is live on GitHub Pages: **[plovatto.github.io/PetLand](https://plovatto.github.io/PetLand/)**
 
-```text
-https://plovatto.github.io/PetLand/
-```
+|                            Services                            |                         Contact                          |
+| :------------------------------------------------------------: | :------------------------------------------------------: |
+| ![Services section with carousel](.github/assets/services.jpg) | ![Contact section with form](.github/assets/contact.jpg) |
 
 ## Features
 
