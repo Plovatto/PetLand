@@ -1,5 +1,8 @@
 # PetLand
 
+[![Deploy](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 [Português](README.md) | [English](README.en.md)
 
 [![PetLand landing page preview](.github/assets/hero.jpg)](https://plovatto.github.io/PetLand/)
@@ -186,3 +189,5 @@ PetLand was developed to practice and demonstrate knowledge in:
 ## License
 
 This project was developed for study and portfolio purposes.
+
+Released under the [MIT License](LICENSE).

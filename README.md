@@ -1,5 +1,8 @@
 # PetLand
 
+[![Deploy](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 [Português](README.md) | [English](README.en.md)
 
 [![Prévia da landing page PetLand](.github/assets/hero.jpg)](https://plovatto.github.io/PetLand/)
@@ -184,3 +187,7 @@ O PetLand foi desenvolvido com o objetivo de praticar e demonstrar conhecimentos
 - Boas práticas de Git e GitHub
 
 Este projeto foi desenvolvido para fins de estudo e portfólio.
+
+## Licença
+
+Distribuído sob a [Licença MIT](LICENSE).
