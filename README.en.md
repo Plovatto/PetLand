@@ -186,6 +186,10 @@ PetLand was developed to practice and demonstrate knowledge in:
 - Automated deployment
 - Git and GitHub best practices
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Security problems should be reported as described in [SECURITY.md](SECURITY.md).
+
 ## License
 
 This project was developed for study and portfolio purposes.
