@@ -1,5 +1,6 @@
 # PetLand
 
+[![CI](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml)
 [![Deploy](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -55,7 +56,8 @@ The project is live on GitHub Pages: **[plovatto.github.io/PetLand](https://plov
 - [react-i18next](https://react.i18next.com/) - i18n integration with React
 - ESLint - code analysis and standardization
 - Prettier - code formatting
-- GitHub Actions - automated deployment
+- [Vitest](https://vitest.dev/) and [fast-check](https://fast-check.dev/) - unit and property-based tests
+- GitHub Actions - CI and automated deployment
 - GitHub Pages - hosting
 
 ## Running Locally
@@ -125,6 +127,9 @@ VITE_EMAILJS_PUBLIC_KEY=
 | `npm run build`        | Runs type checking and generates production code |
 | `npm run preview`      | Serves the production build locally              |
 | `npm run lint`         | Runs ESLint code analysis                        |
+| `npm run typecheck`    | Runs type checking                               |
+| `npm test`             | Runs the tests                                   |
+| `npm run test:watch`   | Runs the tests in watch mode                     |
 | `npm run format`       | Formats code with Prettier                       |
 | `npm run format:check` | Checks formatting without changing files         |
 
@@ -160,6 +165,8 @@ The workflow is located at:
 ```text
 .github/workflows/deploy.yml
 ```
+
+The `.github/workflows/ci.yml` workflow checks formatting, lint, types, tests and the build on every push and pull request.
 
 Vite uses `base: '/PetLand/'` to generate the correct asset paths for GitHub Pages.
 
