@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml)
 [![Deploy](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml)
+[![CodeQL](https://github.com/Plovatto/PetLand/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Plovatto/PetLand/security/code-scanning)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Plovatto/PetLand/badge)](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [Português](README.md) | [English](README.en.md)
