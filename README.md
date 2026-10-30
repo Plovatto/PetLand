@@ -1,5 +1,6 @@
 # PetLand
 
+[![CI](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml)
 [![Deploy](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -55,7 +56,8 @@ O projeto está publicado no GitHub Pages: **[plovatto.github.io/PetLand](https:
 - [react-i18next](https://react.i18next.com/) - integração do i18n com React
 - ESLint - análise e padronização do código
 - Prettier - formatação do código
-- GitHub Actions - deploy automatizado
+- [Vitest](https://vitest.dev/) e [fast-check](https://fast-check.dev/) - testes unitários e baseados em propriedades
+- GitHub Actions - CI e deploy automatizado
 - GitHub Pages - hospedagem
 
 ## Como Executar
@@ -125,6 +127,9 @@ VITE_EMAILJS_PUBLIC_KEY=
 | `npm run build`        | Executa a checagem de tipos e gera o build de produção |
 | `npm run preview`      | Executa localmente o build de produção                 |
 | `npm run lint`         | Executa a análise do código com ESLint                 |
+| `npm run typecheck`    | Executa a checagem de tipos                            |
+| `npm test`             | Executa os testes                                      |
+| `npm run test:watch`   | Executa os testes em modo de observação                |
 | `npm run format`       | Formata o código com Prettier                          |
 | `npm run format:check` | Verifica a formatação sem alterar os arquivos          |
 
@@ -160,6 +165,8 @@ O workflow está em:
 ```text
 .github/workflows/deploy.yml
 ```
+
+O workflow `.github/workflows/ci.yml` verifica formatação, lint, tipos, testes e build em cada push e pull request.
 
 O Vite usa `base: '/PetLand/'` para gerar os caminhos corretos dos assets no GitHub Pages.
 
