@@ -195,6 +195,10 @@ O PetLand foi desenvolvido com o objetivo de praticar e demonstrar conhecimentos
 
 Este projeto foi desenvolvido para fins de estudo e portfólio.
 
+## Contribuição
+
+Veja o [CONTRIBUTING.md](CONTRIBUTING.md). Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
+
 ## Licença
 
 Distribuído sob a [Licença MIT](LICENSE).
