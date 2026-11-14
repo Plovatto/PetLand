@@ -9,9 +9,9 @@
 
 [Português](README.md) | [English](README.en.md)
 
-[![Prévia da landing page PetLand](.github/assets/hero.jpg)](https://plovatto.github.io/PetLand/)
+[![Prévia da landing page PetLand](.github/assets/hero.jpg)](https://petland.plovatto.dev/)
 
-<p align="center"><a href="https://plovatto.github.io/PetLand/"><strong>Ver o projeto ao vivo →</strong></a></p>
+<p align="center"><a href="https://petland.plovatto.dev/"><strong>Ver o projeto ao vivo →</strong></a></p>
 
 Landing page responsiva desenvolvida para um petshop fictício, com foco em uma experiência moderna, agradável, acessível e intuitiva.
 
@@ -21,7 +21,7 @@ O projeto foi criado como parte do meu portfólio pessoal para praticar desenvol
 
 ## Demo
 
-O projeto está publicado no GitHub Pages: **[plovatto.github.io/PetLand](https://plovatto.github.io/PetLand/)**
+O projeto está publicado no GitHub Pages: **[petland.plovatto.dev](https://petland.plovatto.dev/)**
 
 |                            Serviços                             |                            Contato                             |
 | :-------------------------------------------------------------: | :------------------------------------------------------------: |
@@ -171,12 +171,13 @@ O workflow está em:
 
 O workflow `.github/workflows/ci.yml` verifica formatação, lint, tipos, testes e build em cada push e pull request.
 
-O Vite usa `base: '/PetLand/'` para gerar os caminhos corretos dos assets no GitHub Pages.
+O site é servido no domínio personalizado `petland.plovatto.dev`, por isso o Vite usa `base: '/'`.
 
-Para publicar, configure no GitHub:
+Para publicar, crie no DNS do domínio um registro `CNAME` de `petland` para `plovatto.github.io` e configure no GitHub:
 
 ```text
 Settings > Pages > Build and deployment > Source: GitHub Actions
+Settings > Pages > Custom domain: petland.plovatto.dev
 ```
 
 A cada push na branch `main`, o workflow gera o build e publica a pasta `dist`.
