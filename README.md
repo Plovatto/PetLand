@@ -43,6 +43,7 @@ O projeto está publicado no GitHub Pages: **[petland.plovatto.dev](https://petl
 - Internacionalização em português e inglês
 - Troca de idioma com persistência local
 - Assets otimizados em WebP
+- SEO com metatags, dados estruturados, `robots.txt` e `sitemap.xml`
 - Deploy automatizado com GitHub Actions e GitHub Pages
 
 ## Tecnologias
