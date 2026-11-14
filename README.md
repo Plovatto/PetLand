@@ -41,7 +41,8 @@ O projeto está publicado no GitHub Pages: **[petland.plovatto.dev](https://petl
 - Seção de contato com formulário integrado ao EmailJS
 - Footer com identidade visual da marca
 - Internacionalização em português e inglês
-- Troca de idioma com persistência local
+- Uma URL por idioma (`/` em português e `/en/` em inglês) com `hreflang`
+- Idioma inicial definido pelo idioma do sistema, com a escolha salva localmente
 - Assets otimizados em WebP
 - SEO com metatags, dados estruturados, `robots.txt` e `sitemap.xml`
 - Deploy automatizado com GitHub Actions e GitHub Pages
