@@ -43,6 +43,7 @@ The project is live on GitHub Pages: **[petland.plovatto.dev](https://petland.pl
 - Internationalization in Portuguese and English
 - Language switcher with local persistence
 - Optimized WebP assets
+- SEO with meta tags, structured data, `robots.txt`, and `sitemap.xml`
 - Automated deployment with GitHub Actions and GitHub Pages
 
 ## Technologies
