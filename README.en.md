@@ -41,7 +41,8 @@ The project is live on GitHub Pages: **[petland.plovatto.dev](https://petland.pl
 - Contact section with EmailJS form integration
 - Footer with brand identity
 - Internationalization in Portuguese and English
-- Language switcher with local persistence
+- One URL per language (`/` in Portuguese and `/en/` in English) with `hreflang`
+- Initial language based on the system language, with the choice stored locally
 - Optimized WebP assets
 - SEO with meta tags, structured data, `robots.txt`, and `sitemap.xml`
 - Automated deployment with GitHub Actions and GitHub Pages
