@@ -7,116 +7,116 @@
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/16067/badge)](https://www.bestpractices.dev/projects/16067)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[Português](README.md) | [English](README.en.md)
+[Português](README.pt-BR.md) | [English](README.md)
 
-[![Prévia da landing page PetLand](.github/assets/hero.jpg)](https://petland.plovatto.dev/)
+[![PetLand landing page preview](.github/assets/hero.jpg)](https://petland.plovatto.dev/)
 
-<p align="center"><a href="https://petland.plovatto.dev/"><strong>Ver o projeto ao vivo →</strong></a></p>
+<p align="center"><a href="https://petland.plovatto.dev/"><strong>View the live project →</strong></a></p>
 
-Landing page responsiva desenvolvida para um petshop fictício, com foco em uma experiência moderna, agradável, acessível e intuitiva.
+Responsive landing page developed for a fictional pet shop, focused on a modern, pleasant, accessible, and intuitive experience.
 
-O projeto foi criado como parte do meu portfólio pessoal para praticar desenvolvimento front-end, responsividade, organização de componentes, internacionalização e publicação de aplicações React.
+This project was created as part of my personal portfolio to practice front-end development, responsiveness, component organization, internationalization, and React application deployment.
 
-> **Nota:** Este é um projeto fictício e não representa uma empresa real.
+> **Note:** This is a fictional project and does not represent a real company.
 
 ## Demo
 
-O projeto está publicado no GitHub Pages: **[petland.plovatto.dev](https://petland.plovatto.dev/)**
+The project is live on GitHub Pages: **[petland.plovatto.dev](https://petland.plovatto.dev/)**
 
-|                            Serviços                             |                            Contato                             |
-| :-------------------------------------------------------------: | :------------------------------------------------------------: |
-| ![Seção de serviços com carrossel](.github/assets/services.jpg) | ![Seção de contato com formulário](.github/assets/contact.jpg) |
+|                            Services                            |                         Contact                          |
+| :------------------------------------------------------------: | :------------------------------------------------------: |
+| ![Services section with carousel](.github/assets/services.jpg) | ![Contact section with form](.github/assets/contact.jpg) |
 
-## Funcionalidades
+## Features
 
-- Layout responsivo para diferentes tamanhos de tela
-- Navegação fluida entre seções
-- Animações e microinterações com suporte a redução de movimento
-- Smooth scroll com Lenis
-- Cursor personalizado
+- Responsive layout for different screen sizes
+- Smooth navigation between sections
+- Animations and microinteractions with reduced motion support
+- Smooth scroll with Lenis
+- Custom cursor
 - Page loader
-- Seção Hero
-- Seção de serviços com carrossel
-- Seção Sobre
-- Seção de contato com formulário integrado ao EmailJS
-- Footer com identidade visual da marca
-- Internacionalização em português e inglês
-- Uma URL por idioma (`/` em português e `/en/` em inglês) com `hreflang`
-- Idioma inicial definido pelo idioma do sistema, com a escolha salva localmente
-- Assets otimizados em WebP
-- SEO com metatags, dados estruturados, `robots.txt` e `sitemap.xml`
-- Deploy automatizado com GitHub Actions e GitHub Pages
+- Hero section
+- Services section with carousel
+- About section
+- Contact section with EmailJS form integration
+- Footer with brand identity
+- Internationalization in Portuguese and English
+- One URL per language (`/` in Portuguese and `/en/` in English) with `hreflang`
+- Initial language based on the system language, with the choice stored locally
+- Optimized WebP assets
+- SEO with meta tags, structured data, `robots.txt`, and `sitemap.xml`
+- Automated deployment with GitHub Actions and GitHub Pages
 
-## Tecnologias
+## Technologies
 
 - [React](https://react.dev/) 19
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev/)
 - [Tailwind CSS](https://tailwindcss.com/) 4
-- [Framer Motion](https://motion.dev/) - animações e transições
+- [Framer Motion](https://motion.dev/) - animations and transitions
 - [Lenis](https://lenis.darkroom.engineering/) - smooth scroll
-- [EmailJS](https://www.emailjs.com/) - envio do formulário de contato
-- [Swiper](https://swiperjs.com/) - carrossel de serviços
-- [i18next](https://www.i18next.com/) - internacionalização
-- [react-i18next](https://react.i18next.com/) - integração do i18n com React
-- ESLint - análise e padronização do código
-- Prettier - formatação do código
-- [Vitest](https://vitest.dev/) e [fast-check](https://fast-check.dev/) - testes unitários e baseados em propriedades
-- GitHub Actions - CI e deploy automatizado
-- GitHub Pages - hospedagem
+- [EmailJS](https://www.emailjs.com/) - contact form delivery
+- [Swiper](https://swiperjs.com/) - services carousel
+- [i18next](https://www.i18next.com/) - internationalization
+- [react-i18next](https://react.i18next.com/) - i18n integration with React
+- ESLint - code analysis and standardization
+- Prettier - code formatting
+- [Vitest](https://vitest.dev/) and [fast-check](https://fast-check.dev/) - unit and property-based tests
+- GitHub Actions - CI and automated deployment
+- GitHub Pages - hosting
 
-## Como Executar
+## Running Locally
 
-### Pré-requisitos
+### Prerequisites
 
-Antes de começar, tenha instalado:
+Before starting, make sure you have installed:
 
 - [Node.js](https://nodejs.org/)
 - npm
 
-### Instalação
+### Installation
 
-Clone o repositório:
+Clone the repository:
 
 ```bash
 git clone https://github.com/Plovatto/PetLand.git
 ```
 
-Acesse a pasta do projeto:
+Open the project folder:
 
 ```bash
 cd PetLand
 ```
 
-Instale as dependências:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Crie o arquivo de variáveis de ambiente:
+Create the environment variables file:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Preencha as credenciais do EmailJS em `.env.local` e execute:
+Fill in your EmailJS credentials in `.env.local` and run:
 
 ```bash
 npm run dev
 ```
 
-O projeto estará disponível em:
+The project will be available at:
 
 ```text
 http://localhost:5173
 ```
 
-## Variáveis de Ambiente
+## Environment Variables
 
-As variáveis são definidas no arquivo `.env.local`, que não deve ser versionado.
+Environment variables are defined in `.env.local`, which should not be committed.
 
-Utilize `.env.example` como referência:
+Use `.env.example` as a reference:
 
 ```env
 VITE_EMAILJS_SERVICE_ID=
@@ -126,36 +126,36 @@ VITE_EMAILJS_PUBLIC_KEY=
 
 ## Scripts
 
-| Comando                | Descrição                                              |
-| ---------------------- | ------------------------------------------------------ |
-| `npm run dev`          | Inicia o servidor de desenvolvimento                   |
-| `npm run build`        | Executa a checagem de tipos e gera o build de produção |
-| `npm run preview`      | Executa localmente o build de produção                 |
-| `npm run lint`         | Executa a análise do código com ESLint                 |
-| `npm run typecheck`    | Executa a checagem de tipos                            |
-| `npm test`             | Executa os testes                                      |
-| `npm run test:watch`   | Executa os testes em modo de observação                |
-| `npm run format`       | Formata o código com Prettier                          |
-| `npm run format:check` | Verifica a formatação sem alterar os arquivos          |
+| Command                | Description                                      |
+| ---------------------- | ------------------------------------------------ |
+| `npm run dev`          | Starts the development server                    |
+| `npm run build`        | Runs type checking and generates production code |
+| `npm run preview`      | Serves the production build locally              |
+| `npm run lint`         | Runs ESLint code analysis                        |
+| `npm run typecheck`    | Runs type checking                               |
+| `npm test`             | Runs the tests                                   |
+| `npm run test:watch`   | Runs the tests in watch mode                     |
+| `npm run format`       | Formats code with Prettier                       |
+| `npm run format:check` | Checks formatting without changing files         |
 
-## Estrutura do Projeto
+## Project Structure
 
 ```text
 src/
-├── assets/                 # Imagens e SVGs utilizados pelos componentes
+├── assets/                 # Images and SVGs used by components
 ├── components/
-│   ├── layout/             # Componentes estruturais, como Header, Footer e PageLoader
-│   ├── sections/           # Seções da página, como Hero, Services, About e Contact
-│   └── ui/                 # Componentes reutilizáveis, como AnimatedText e LanguageToggle
-├── constants/              # Dados estáticos, links e configurações de seções
-├── context/                # Contextos globais da aplicação
-├── hooks/                  # Hooks customizados
-├── lib/                    # Funções utilitárias
-├── locales/                # Arquivos de tradução
+│   ├── layout/             # Structural components, such as Header, Footer, and PageLoader
+│   ├── sections/           # Page sections, such as Hero, Services, About, and Contact
+│   └── ui/                 # Reusable components, such as AnimatedText and LanguageToggle
+├── constants/              # Static data, links, and section configuration
+├── context/                # Global application contexts
+├── hooks/                  # Custom hooks
+├── lib/                    # Utility functions
+├── locales/                # Translation files
 │   ├── en/
 │   └── pt/
 ├── styles/
-│   └── index.css           # Estilos globais e configuração do Tailwind CSS
+│   └── index.css           # Global styles and Tailwind CSS configuration
 ├── App.tsx
 ├── i18n.ts
 └── main.tsx
@@ -163,48 +163,48 @@ src/
 
 ## Deploy
 
-O deploy é feito com GitHub Actions para o GitHub Pages.
+Deployment is handled by GitHub Actions and GitHub Pages.
 
-O workflow está em:
+The workflow is located at:
 
 ```text
 .github/workflows/deploy.yml
 ```
 
-O workflow `.github/workflows/ci.yml` verifica formatação, lint, tipos, testes e build em cada push e pull request.
+The `.github/workflows/ci.yml` workflow checks formatting, lint, types, tests and the build on every push and pull request.
 
-O site é servido no domínio personalizado `petland.plovatto.dev`, por isso o Vite usa `base: '/'`.
+The site is served from the custom domain `petland.plovatto.dev`, so Vite uses `base: '/'`.
 
-Para publicar, crie no DNS do domínio um registro `CNAME` de `petland` para `plovatto.github.io` e configure no GitHub:
+To publish, create a `CNAME` DNS record pointing `petland` to `plovatto.github.io` and configure GitHub:
 
 ```text
 Settings > Pages > Build and deployment > Source: GitHub Actions
 Settings > Pages > Custom domain: petland.plovatto.dev
 ```
 
-A cada push na branch `main`, o workflow gera o build e publica a pasta `dist`.
+Every push to the `main` branch runs the workflow, builds the project, and publishes the `dist` folder.
 
-## Objetivos do Projeto
+## Project Goals
 
-O PetLand foi desenvolvido com o objetivo de praticar e demonstrar conhecimentos em:
+PetLand was developed to practice and demonstrate knowledge in:
 
-- Desenvolvimento de interfaces com React e TypeScript
-- Criação de layouts responsivos
-- Componentização e reutilização de código
-- Organização de projetos front-end
-- Animações e microinterações
-- Acessibilidade e preferências de movimento
-- Internacionalização de interfaces
-- Integração com serviços externos
-- Deploy automatizado
-- Boas práticas de Git e GitHub
+- Building interfaces with React and TypeScript
+- Creating responsive layouts
+- Componentization and code reuse
+- Front-end project organization
+- Animations and microinteractions
+- Accessibility and motion preferences
+- Interface internationalization
+- External service integration
+- Automated deployment
+- Git and GitHub best practices
 
-Este projeto foi desenvolvido para fins de estudo e portfólio.
+## Contributing
 
-## Contribuição
+See [CONTRIBUTING.md](CONTRIBUTING.md). Security problems should be reported as described in [SECURITY.md](SECURITY.md).
 
-Veja o [CONTRIBUTING.md](CONTRIBUTING.md). Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
+## License
 
-## Licença
+This project was developed for study and portfolio purposes.
 
-Distribuído sob a [Licença MIT](LICENSE).
+Released under the [MIT License](LICENSE).
