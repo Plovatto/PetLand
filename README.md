@@ -16,10 +16,10 @@
   <br>
   <br>
 
-<a href="https://github.com/Plovatto/PetLand/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Plovatto/PetLand/ci.yml?branch=main&style=flat-square&label=CI&labelColor=1E130C"></a>
-<a href="https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand"><img alt="OpenSSF Scorecard" src="https://img.shields.io/ossf-scorecard/github.com/Plovatto/PetLand?style=flat-square&label=OpenSSF%20Scorecard&labelColor=1E130C&color=brightgreen"></a>
-<a href="https://www.bestpractices.dev/projects/16067"><img alt="OpenSSF Best Practices" src="https://img.shields.io/cii/level/16067?style=flat-square&label=OpenSSF%20Best%20Practices&labelColor=1E130C"></a>
-<a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square&labelColor=1E130C"></a>
+<a href="https://github.com/Plovatto/PetLand/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Plovatto/PetLand/ci.yml?branch=main&style=flat-square&label=CI"></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand"><img alt="OpenSSF Scorecard" src="https://img.shields.io/ossf-scorecard/github.com/Plovatto/PetLand?style=flat-square&label=OpenSSF%20Scorecard&color=brightgreen"></a>
+<a href="https://www.bestpractices.dev/projects/16067"><img alt="OpenSSF Best Practices" src="https://img.shields.io/cii/level/16067?style=flat-square&label=OpenSSF%20Best%20Practices"></a>
+<a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square"></a>
 </div>
 
 <br>
@@ -50,18 +50,11 @@ PetLand is a single page with four sections (home, services, about, and contact)
 
 ## Demo
 
-<table>
-  <tr>
-    <td width="60%">
-      <a href="https://petland.plovatto.dev/en/"><img alt="PetLand cover: the English home page in a browser, the mobile version beside it, and the React 19, TypeScript, Tailwind CSS 4, Motion, and i18next tags" src="./.github/assets/cover.webp"></a>
-    </td>
-    <td width="40%">
-      <img alt="QR code that opens petland.plovatto.dev/en/ on your phone" src="./.github/assets/qr-en.webp">
-    </td>
-  </tr>
-</table>
-
 Live on GitHub Pages: **[petland.plovatto.dev/en/](https://petland.plovatto.dev/en/)** in English and **[petland.plovatto.dev](https://petland.plovatto.dev/)** in Portuguese.
+
+<p align="center">
+  <img alt="QR code that opens petland.plovatto.dev/en/ on your phone" src="./.github/assets/qr-en.webp" width="360">
+</p>
 
 ## Overview
 
