@@ -145,7 +145,7 @@ No celular, o carrossel de serviços ocupa a largura toda e funciona com um desl
 
 ## Como executar
 
-Requer [Node.js](https://nodejs.org/) e npm.
+Requer [Node.js](https://nodejs.org/) 24 (veja o [`.nvmrc`](.nvmrc)) e npm.
 
 1. Clone o repositório e instale as dependências:
 
@@ -249,7 +249,7 @@ O PetLand foi desenvolvido para praticar e demonstrar:
 
 ## Contribuição
 
-Veja o [CONTRIBUTING.md](CONTRIBUTING.md) (em inglês). Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
+Veja o [CONTRIBUTING.md](CONTRIBUTING.md) e o [código de conduta](CODE_OF_CONDUCT.md), ambos em inglês. Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
 
 ## Licença
 

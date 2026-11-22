@@ -145,7 +145,7 @@ On phones, the services carousel spans the full width and works with a swipe.
 
 ## Getting started
 
-Requires [Node.js](https://nodejs.org/) and npm.
+Requires [Node.js](https://nodejs.org/) 24 (see [`.nvmrc`](.nvmrc)) and npm.
 
 1. Clone the repository and install the dependencies:
 
@@ -249,7 +249,7 @@ PetLand was built to practice and demonstrate:
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Security issues should be reported according to [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md). Security issues should be reported according to [SECURITY.md](SECURITY.md).
 
 ## License
 
