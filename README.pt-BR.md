@@ -1,30 +1,25 @@
 <div align="center">
   <a href="https://petland.plovatto.dev/">
     <picture>
-      <source media="(prefers-reduced-motion: reduce)" srcset="./.github/assets/intro-still.webp">
-      <img alt="Apresentação animada da landing page PetLand: a página inicial com o cachorro aberta no navegador, as seções Sobre e Contato ao redor, a versão mobile em destaque e, no fim, o título Your pet's happiness, beautifully presented" src="./.github/assets/intro.gif" width="100%">
+      <source media="(prefers-reduced-motion: reduce)" srcset="./.github/assets/hero-still-pt.webp">
+      <img alt="PetLand: landing page responsiva e bilíngue para um petshop fictício. Uma animação mostra o site no navegador e no celular, acima das tecnologias React 19, TypeScript, Tailwind CSS 4, Motion e i18next" src="./.github/assets/hero-pt.webp" width="100%">
     </picture>
   </a>
 
-  <h1>PetLand</h1>
+  <br>
+  <br>
 
-  <p>Landing page responsiva e bilíngue para um petshop fictício, feita com React, TypeScript e Tailwind CSS.</p>
+<a href="https://petland.plovatto.dev/"><img alt="Ver o site" src="./.github/assets/btn-live-pt.webp" height="48"></a>
+&nbsp;
+<a href="README.md"><img alt="English version" src="./.github/assets/btn-lang-pt.webp" height="48"></a>
+
+  <br>
+  <br>
 
 <a href="https://github.com/Plovatto/PetLand/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Plovatto/PetLand/ci.yml?branch=main&style=flat-square&label=CI&labelColor=1E130C"></a>
-<a href="https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/Plovatto/PetLand/deploy.yml?branch=main&style=flat-square&label=deploy&labelColor=1E130C"></a>
-<a href="https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand"><img alt="OpenSSF Scorecard" src="https://img.shields.io/ossf-scorecard/github.com/Plovatto/PetLand?style=flat-square&label=OpenSSF%20Scorecard&labelColor=1E130C"></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand"><img alt="OpenSSF Scorecard" src="https://img.shields.io/ossf-scorecard/github.com/Plovatto/PetLand?style=flat-square&label=OpenSSF%20Scorecard&labelColor=1E130C&color=brightgreen"></a>
 <a href="https://www.bestpractices.dev/projects/16067"><img alt="OpenSSF Best Practices" src="https://img.shields.io/cii/level/16067?style=flat-square&label=OpenSSF%20Best%20Practices&labelColor=1E130C"></a>
-<a href="LICENSE"><img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-F26A1F?style=flat-square&labelColor=1E130C"></a>
-
-  <p>
-    <a href="https://petland.plovatto.dev/"><strong>Ver ao vivo</strong></a>
-    &nbsp;·&nbsp;
-    <a href="https://petland.plovatto.dev/en/">Versão em inglês</a>
-    &nbsp;·&nbsp;
-    <a href="https://github.com/Plovatto/PetLand/issues">Reportar um problema</a>
-  </p>
-
-  <p><sub><strong>Português</strong> · <a href="README.md">English</a></sub></p>
+<a href="LICENSE"><img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-brightgreen?style=flat-square&labelColor=1E130C"></a>
 </div>
 
 <br>
