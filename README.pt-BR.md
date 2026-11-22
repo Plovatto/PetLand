@@ -1,133 +1,187 @@
-# PetLand
+<div align="center">
+  <a href="https://petland.plovatto.dev/">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="./.github/assets/intro-still.webp">
+      <img alt="Apresentação animada da landing page PetLand: a página inicial com o cachorro aberta no navegador, as seções Sobre e Contato ao redor, a versão mobile em destaque e, no fim, o título Your pet's happiness, beautifully presented" src="./.github/assets/intro.gif" width="100%">
+    </picture>
+  </a>
 
-[![CI](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/ci.yml)
-[![Deploy](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml/badge.svg)](https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml)
-[![CodeQL](https://github.com/Plovatto/PetLand/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Plovatto/PetLand/security/code-scanning)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Plovatto/PetLand/badge)](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/16067/badge)](https://www.bestpractices.dev/projects/16067)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+  <h1>PetLand</h1>
 
-[Português](README.pt-BR.md) | [English](README.md)
+  <p>Landing page responsiva e bilíngue para um petshop fictício, feita com React, TypeScript e Tailwind CSS.</p>
 
-[![Prévia da landing page PetLand](.github/assets/hero.jpg)](https://petland.plovatto.dev/)
+<a href="https://github.com/Plovatto/PetLand/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Plovatto/PetLand/ci.yml?branch=main&style=flat-square&label=CI&labelColor=1E130C"></a>
+<a href="https://github.com/Plovatto/PetLand/actions/workflows/deploy.yml"><img alt="Deploy" src="https://img.shields.io/github/actions/workflow/status/Plovatto/PetLand/deploy.yml?branch=main&style=flat-square&label=deploy&labelColor=1E130C"></a>
+<a href="https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand"><img alt="OpenSSF Scorecard" src="https://img.shields.io/ossf-scorecard/github.com/Plovatto/PetLand?style=flat-square&label=OpenSSF%20Scorecard&labelColor=1E130C"></a>
+<a href="https://www.bestpractices.dev/projects/16067"><img alt="OpenSSF Best Practices" src="https://img.shields.io/cii/level/16067?style=flat-square&label=OpenSSF%20Best%20Practices&labelColor=1E130C"></a>
+<a href="LICENSE"><img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-F26A1F?style=flat-square&labelColor=1E130C"></a>
 
-<p align="center"><a href="https://petland.plovatto.dev/"><strong>Ver o projeto ao vivo →</strong></a></p>
+  <p>
+    <a href="https://petland.plovatto.dev/"><strong>Ver ao vivo</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://petland.plovatto.dev/en/">Versão em inglês</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Plovatto/PetLand/issues">Reportar um problema</a>
+  </p>
 
-Landing page responsiva desenvolvida para um petshop fictício, com foco em uma experiência moderna, agradável, acessível e intuitiva.
+  <p><sub><strong>Português</strong> · <a href="README.md">English</a></sub></p>
+</div>
 
-O projeto foi criado como parte do meu portfólio pessoal para praticar desenvolvimento front-end, responsividade, organização de componentes, internacionalização e publicação de aplicações React.
+<br>
 
-> **Nota:** Este é um projeto fictício e não representa uma empresa real.
+O PetLand é uma página única com quatro seções (início, serviços, sobre e contato) pensada para ser agradável, acessível e rápida em qualquer tela. Faz parte do meu portfólio e foi criada para praticar desenvolvimento front-end, responsividade, componentização, internacionalização e publicação de aplicações React.
+
+> [!NOTE]
+> Este é um projeto fictício e não representa uma empresa real.
+
+<details>
+<summary><strong>Sumário</strong></summary>
+
+- [Demo](#demo)
+- [Visão geral](#visão-geral)
+- [Destaques](#destaques)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Qualidade e segurança](#qualidade-e-segurança)
+- [Como executar](#como-executar)
+- [Scripts](#scripts)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Deploy](#deploy)
+- [Objetivos do projeto](#objetivos-do-projeto)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+
+</details>
 
 ## Demo
 
-O projeto está publicado no GitHub Pages: **[petland.plovatto.dev](https://petland.plovatto.dev/)**
+<table>
+  <tr>
+    <td width="60%">
+      <a href="https://petland.plovatto.dev/"><img alt="Capa do PetLand: página inicial em inglês aberta no navegador, com a versão mobile ao lado e as tecnologias React 19, TypeScript, Tailwind CSS 4, Motion e i18next" src="./.github/assets/cover.webp"></a>
+    </td>
+    <td width="40%">
+      <img alt="QR code que abre petland.plovatto.dev no celular" src="./.github/assets/qr-pt.webp">
+    </td>
+  </tr>
+</table>
 
-|                            Serviços                             |                            Contato                             |
-| :-------------------------------------------------------------: | :------------------------------------------------------------: |
-| ![Seção de serviços com carrossel](.github/assets/services.jpg) | ![Seção de contato com formulário](.github/assets/contact.jpg) |
+Publicado no GitHub Pages: **[petland.plovatto.dev](https://petland.plovatto.dev/)** em português e **[petland.plovatto.dev/en/](https://petland.plovatto.dev/en/)** em inglês.
+
+## Visão geral
+
+<img alt="Linha do tempo com as quatro seções da página: início com o cachorro, serviços em carrossel, sobre com endereço e horários, e contato com formulário, além da versão mobile" src="./.github/assets/panorama.webp" width="100%">
+
+Uma rolagem do começo ao fim, com o mesmo cuidado em todos os tamanhos de tela.
+
+## Destaques
+
+### Português ou inglês, com um toque
+
+<img alt="A mesma página inicial lado a lado: em português no endereço / e em inglês no endereço /en/, com o seletor PT/EN no menu" src="./.github/assets/bilingual.webp" width="100%">
+
+Cada idioma tem sua própria URL com `hreflang`. Na primeira visita, o site segue o idioma do sistema, e a escolha fica salva no navegador.
+
+### Doze serviços na ponta do polegar
+
+<img alt="Quatro celulares mostrando o carrossel de serviços: veterinária, pet shop, fotografia e banho" src="./.github/assets/mobile-carousel.webp" width="100%">
+
+No celular, o carrossel de serviços ocupa a largura toda e funciona com um deslizar.
+
+### Detalhes que fazem diferença
+
+- **Rolagem suave** com Lenis e navegação que destaca a seção atual.
+- **Cursor personalizado** e **page loader** com a identidade da marca.
+- **Animações que respeitam o usuário:** com "reduzir movimento" ativado no sistema, as transições são simplificadas.
 
 ## Funcionalidades
+
+**Experiência**
 
 - Layout responsivo para diferentes tamanhos de tela
 - Navegação fluida entre seções
 - Animações e microinterações com suporte a redução de movimento
-- Smooth scroll com Lenis
-- Cursor personalizado
-- Page loader
-- Seção Hero
-- Seção de serviços com carrossel
-- Seção Sobre
-- Seção de contato com formulário integrado ao EmailJS
+- Smooth scroll, cursor personalizado e page loader
+
+**Conteúdo**
+
+- Seções Início, Serviços (com carrossel), Sobre e Contato
+- Formulário de contato integrado ao EmailJS
 - Footer com identidade visual da marca
-- Internacionalização em português e inglês
-- Uma URL por idioma (`/` em português e `/en/` em inglês) com `hreflang`
-- Idioma inicial definido pelo idioma do sistema, com a escolha salva localmente
+
+**Idiomas, SEO e desempenho**
+
+- Internacionalização em português e inglês, com uma URL por idioma (`/` e `/en/`) e `hreflang`
+- Idioma inicial definido pelo sistema, com a escolha salva localmente
+- Metatags, dados estruturados, `robots.txt` e `sitemap.xml`
 - Assets otimizados em WebP
-- SEO com metatags, dados estruturados, `robots.txt` e `sitemap.xml`
-- Deploy automatizado com GitHub Actions e GitHub Pages
 
 ## Tecnologias
 
-- [React](https://react.dev/) 19
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev/)
-- [Tailwind CSS](https://tailwindcss.com/) 4
-- [Framer Motion](https://motion.dev/) - animações e transições
-- [Lenis](https://lenis.darkroom.engineering/) - smooth scroll
-- [EmailJS](https://www.emailjs.com/) - envio do formulário de contato
-- [Swiper](https://swiperjs.com/) - carrossel de serviços
-- [i18next](https://www.i18next.com/) - internacionalização
-- [react-i18next](https://react.i18next.com/) - integração do i18n com React
-- ESLint - análise e padronização do código
-- Prettier - formatação do código
-- [Vitest](https://vitest.dev/) e [fast-check](https://fast-check.dev/) - testes unitários e baseados em propriedades
-- GitHub Actions - CI e deploy automatizado
-- GitHub Pages - hospedagem
+<img alt="Construído com: React 19 (interface), TypeScript (componentes tipados), Vite (build), Tailwind CSS 4 (estilos), Motion (animações), Lenis (rolagem suave), Swiper (carrossel de serviços), i18next (PT e EN) e EmailJS (formulário de contato)" src="./.github/assets/built-with.webp" width="100%">
 
-## Como Executar
+| Tecnologia                                                                        | Para quê                                    |
+| :-------------------------------------------------------------------------------- | :------------------------------------------ |
+| [React](https://react.dev/) 19 + [TypeScript](https://www.typescriptlang.org/)    | Interface e componentes tipados             |
+| [Vite](https://vite.dev/)                                                         | Servidor de desenvolvimento e build         |
+| [Tailwind CSS](https://tailwindcss.com/) 4                                        | Estilos                                     |
+| [Framer Motion](https://motion.dev/)                                              | Animações e transições                      |
+| [Lenis](https://lenis.darkroom.engineering/)                                      | Rolagem suave                               |
+| [Swiper](https://swiperjs.com/)                                                   | Carrossel de serviços                       |
+| [i18next](https://www.i18next.com/) + [react-i18next](https://react.i18next.com/) | Internacionalização                         |
+| [EmailJS](https://www.emailjs.com/)                                               | Envio do formulário de contato              |
+| [Vitest](https://vitest.dev/) + [fast-check](https://fast-check.dev/)             | Testes unitários e baseados em propriedades |
+| ESLint + Prettier                                                                 | Análise e formatação do código              |
+| GitHub Actions + GitHub Pages                                                     | CI, deploy automatizado e hospedagem        |
 
-### Pré-requisitos
+## Qualidade e segurança
 
-Antes de começar, tenha instalado:
+<img alt="Conferido a cada push: formatação com Prettier, lint com ESLint, tipos com tsc, testes com Vitest e fast-check, build com Vite e deploy no GitHub Pages. Segurança contínua com CodeQL, OpenSSF Scorecard semanal, Dependabot e actions fixadas por hash" src="./.github/assets/quality-pt.webp" width="100%">
 
-- [Node.js](https://nodejs.org/)
-- npm
+- O workflow [`ci.yml`](.github/workflows/ci.yml) verifica formatação, lint, tipos, testes e build em cada push e pull request para a `main`.
+- [CodeQL](https://github.com/Plovatto/PetLand/security/code-scanning) analisa o código, e o [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand) roda toda semana.
+- O Dependabot atualiza as dependências npm toda semana e as GitHub Actions todo mês.
+- Todas as actions dos workflows são fixadas por hash de commit.
 
-### Instalação
+## Como executar
 
-Clone o repositório:
+Requer [Node.js](https://nodejs.org/) e npm.
 
-```bash
-git clone https://github.com/Plovatto/PetLand.git
-```
+1. Clone o repositório e instale as dependências:
 
-Acesse a pasta do projeto:
+   ```bash
+   git clone https://github.com/Plovatto/PetLand.git
+   cd PetLand
+   npm install
+   ```
 
-```bash
-cd PetLand
-```
+2. Crie o arquivo de variáveis de ambiente:
 
-Instale as dependências:
+   ```bash
+   cp .env.example .env.local
+   ```
 
-```bash
-npm install
-```
+3. Preencha as credenciais do EmailJS em `.env.local`:
 
-Crie o arquivo de variáveis de ambiente:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=
+   VITE_EMAILJS_TEMPLATE_ID=
+   VITE_EMAILJS_PUBLIC_KEY=
+   ```
 
-```bash
-cp .env.example .env.local
-```
+4. Inicie o servidor de desenvolvimento e abra <http://localhost:5173>:
 
-Preencha as credenciais do EmailJS em `.env.local` e execute:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-```
-
-O projeto estará disponível em:
-
-```text
-http://localhost:5173
-```
-
-## Variáveis de Ambiente
-
-As variáveis são definidas no arquivo `.env.local`, que não deve ser versionado.
-
-Utilize `.env.example` como referência:
-
-```env
-VITE_EMAILJS_SERVICE_ID=
-VITE_EMAILJS_TEMPLATE_ID=
-VITE_EMAILJS_PUBLIC_KEY=
-```
+> [!IMPORTANT]
+> O `.env.local` não deve ser versionado. Sem as credenciais, o site funciona normalmente, mas o formulário de contato não envia mensagens.
 
 ## Scripts
 
 | Comando                | Descrição                                              |
-| ---------------------- | ------------------------------------------------------ |
+| :--------------------- | :----------------------------------------------------- |
 | `npm run dev`          | Inicia o servidor de desenvolvimento                   |
 | `npm run build`        | Executa a checagem de tipos e gera o build de produção |
 | `npm run preview`      | Executa localmente o build de produção                 |
@@ -138,7 +192,10 @@ VITE_EMAILJS_PUBLIC_KEY=
 | `npm run format`       | Formata o código com Prettier                          |
 | `npm run format:check` | Verifica a formatação sem alterar os arquivos          |
 
-## Estrutura do Projeto
+## Estrutura do projeto
+
+<details>
+<summary>Ver a árvore de pastas</summary>
 
 ```text
 src/
@@ -161,45 +218,34 @@ src/
 └── main.tsx
 ```
 
+</details>
+
 ## Deploy
 
-O deploy é feito com GitHub Actions para o GitHub Pages.
+<details>
+<summary>Como o site é publicado no GitHub Pages</summary>
 
-O workflow está em:
+O deploy é feito pelo workflow [`deploy.yml`](.github/workflows/deploy.yml). A cada push na branch `main`, ele gera o build e publica a pasta `dist`.
 
-```text
-.github/workflows/deploy.yml
-```
-
-O workflow `.github/workflows/ci.yml` verifica formatação, lint, tipos, testes e build em cada push e pull request.
-
-O site é servido no domínio personalizado `petland.plovatto.dev`, por isso o Vite usa `base: '/'`.
-
-Para publicar, crie no DNS do domínio um registro `CNAME` de `petland` para `plovatto.github.io` e configure no GitHub:
+O site é servido no domínio personalizado `petland.plovatto.dev`, por isso o Vite usa `base: '/'`. Para publicar, crie no DNS do domínio um registro `CNAME` de `petland` para `plovatto.github.io` e configure no GitHub:
 
 ```text
 Settings > Pages > Build and deployment > Source: GitHub Actions
 Settings > Pages > Custom domain: petland.plovatto.dev
 ```
 
-A cada push na branch `main`, o workflow gera o build e publica a pasta `dist`.
+</details>
 
-## Objetivos do Projeto
+## Objetivos do projeto
 
-O PetLand foi desenvolvido com o objetivo de praticar e demonstrar conhecimentos em:
+O PetLand foi desenvolvido para praticar e demonstrar:
 
-- Desenvolvimento de interfaces com React e TypeScript
-- Criação de layouts responsivos
-- Componentização e reutilização de código
-- Organização de projetos front-end
-- Animações e microinterações
-- Acessibilidade e preferências de movimento
-- Internacionalização de interfaces
+- Interfaces com React e TypeScript, componentizadas e reutilizáveis
+- Layouts responsivos e organização de projetos front-end
+- Animações, microinterações e respeito às preferências de movimento
+- Acessibilidade e internacionalização
 - Integração com serviços externos
-- Deploy automatizado
-- Boas práticas de Git e GitHub
-
-Este projeto foi desenvolvido para fins de estudo e portfólio.
+- Deploy automatizado e boas práticas de Git e GitHub
 
 ## Contribuição
 
@@ -208,3 +254,9 @@ Veja o [CONTRIBUTING.md](CONTRIBUTING.md). Falhas de segurança devem ser report
 ## Licença
 
 Distribuído sob a [Licença MIT](LICENSE).
+
+<br>
+
+<div align="center">
+  <sub>Feito por <a href="https://github.com/Plovatto">Pandora Becker Lovatto</a>.</sub>
+</div>
