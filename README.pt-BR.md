@@ -24,17 +24,17 @@
 
 <br>
 
-O PetLand é uma página única com quatro seções (início, serviços, sobre e contato) pensada para ser agradável, acessível e rápida em qualquer tela. Faz parte do meu portfólio e foi criada para praticar desenvolvimento front-end, responsividade, componentização, internacionalização e publicação de aplicações React.
+<p align="center">O PetLand é a landing page de um petshop fictício: uma rolagem, quatro seções, dois idiomas. Faz parte do meu portfólio e foi criado para praticar desenvolvimento front-end, responsividade, componentização, internacionalização e publicação de aplicações React.</p>
 
-> [!NOTE]
-> Este é um projeto fictício e não representa uma empresa real.
+<br>
 
 <details>
 <summary><strong>Sumário</strong></summary>
 
-- [Demo](#demo)
 - [Visão geral](#visão-geral)
-- [Destaques](#destaques)
+- [Português ou inglês? Um toque.](#português-ou-inglês-um-toque)
+- [Doze serviços na ponta do polegar](#doze-serviços-na-ponta-do-polegar)
+- [Abra no celular](#abra-no-celular)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias](#tecnologias)
 - [Qualidade e segurança](#qualidade-e-segurança)
@@ -44,69 +44,67 @@ O PetLand é uma página única com quatro seções (início, serviços, sobre e
 - [Deploy](#deploy)
 - [Objetivos do projeto](#objetivos-do-projeto)
 - [Contribuição](#contribuição)
+- [Segurança](#segurança)
+- [Histórico de versões](#histórico-de-versões)
+- [Autoria](#autoria)
 - [Licença](#licença)
 
 </details>
 
-## Demo
-
-Publicado no GitHub Pages: **[petland.plovatto.dev](https://petland.plovatto.dev/)** em português e **[petland.plovatto.dev/en/](https://petland.plovatto.dev/en/)** em inglês.
-
-<p align="center">
-  <img alt="QR code que abre petland.plovatto.dev no celular" src="./.github/assets/qr-pt.webp" width="360">
-</p>
-
 ## Visão geral
+
+Início, serviços, sobre e contato numa única rolagem, com o mesmo cuidado em todos os tamanhos de tela.
 
 <img alt="Linha do tempo com as quatro seções da página: início com o cachorro, serviços em carrossel, sobre com endereço e horários, e contato com formulário, além da versão mobile" src="./.github/assets/panorama.webp" width="100%">
 
-Uma rolagem do começo ao fim, com o mesmo cuidado em todos os tamanhos de tela.
-
-## Destaques
-
-### Português ou inglês, com um toque
-
-<img alt="A mesma página inicial lado a lado: em português no endereço / e em inglês no endereço /en/, com o seletor PT/EN no menu" src="./.github/assets/bilingual.webp" width="100%">
+## Português ou inglês? Um toque.
 
 Cada idioma tem sua própria URL com `hreflang`. Na primeira visita, o site segue o idioma do sistema, e a escolha fica salva no navegador.
 
-### Doze serviços na ponta do polegar
+<img alt="A mesma página inicial lado a lado: em português no endereço / e em inglês no endereço /en/, com o seletor PT/EN no menu" src="./.github/assets/bilingual.webp" width="100%">
 
-<img alt="Quatro celulares mostrando o carrossel de serviços: veterinária, pet shop, fotografia e banho" src="./.github/assets/mobile-carousel.webp" width="100%">
+## Doze serviços na ponta do polegar
 
 No celular, o carrossel de serviços ocupa a largura toda e funciona com um deslizar.
 
-### Detalhes que fazem diferença
+<img alt="Quatro celulares mostrando o carrossel de serviços: veterinária, pet shop, fotografia e banho" src="./.github/assets/mobile-carousel.webp" width="100%">
 
-- **Rolagem suave** com Lenis e navegação que destaca a seção atual.
-- **Cursor personalizado** e **page loader** com a identidade da marca.
-- **Animações que respeitam o usuário:** com "reduzir movimento" ativado no sistema, as transições são simplificadas.
+## Abra no celular
+
+O site está publicado no GitHub Pages nos dois idiomas.
+
+<a href="https://petland.plovatto.dev/"><img alt="QR code que abre petland.plovatto.dev, ao lado dos endereços petland.plovatto.dev em português e petland.plovatto.dev/en/ em inglês" src="./.github/assets/demo-pt.webp" width="100%"></a>
 
 ## Funcionalidades
 
-**Experiência**
+### Experiência
 
-- Layout responsivo para diferentes tamanhos de tela
-- Navegação fluida entre seções
-- Animações e microinterações com suporte a redução de movimento
-- Smooth scroll, cursor personalizado e page loader
+- Layout responsivo para todos os tamanhos de tela
+- Rolagem suave com Lenis e navegação que destaca a seção atual
+- Cursor personalizado e page loader com a identidade da marca
+- Animações e microinterações que respeitam o "reduzir movimento"
 
-**Conteúdo**
+### Conteúdo
 
 - Seções Início, Serviços (com carrossel), Sobre e Contato
 - Formulário de contato integrado ao EmailJS
-- Footer com identidade visual da marca
+- Footer com a identidade visual da marca
 
-**Idiomas, SEO e desempenho**
+### Idiomas, SEO e desempenho
 
-- Internacionalização em português e inglês, com uma URL por idioma (`/` e `/en/`) e `hreflang`
+- Português e inglês, com uma URL por idioma (`/` e `/en/`) e `hreflang`
 - Idioma inicial definido pelo sistema, com a escolha salva localmente
 - Metatags, dados estruturados, `robots.txt` e `sitemap.xml`
 - Assets otimizados em WebP
 
 ## Tecnologias
 
+Nove bibliotecas, cada uma com um papel claro.
+
 <img alt="Construído com: React 19 (interface), TypeScript (componentes tipados), Vite (build), Tailwind CSS 4 (estilos), Motion (animações), Lenis (rolagem suave), Swiper (carrossel de serviços), i18next (PT e EN) e EmailJS (formulário de contato)" src="./.github/assets/built-with.webp" width="100%">
+
+<details>
+<summary>Ver cada ferramenta e para que serve</summary>
 
 | Tecnologia                                                                        | Para quê                                    |
 | :-------------------------------------------------------------------------------- | :------------------------------------------ |
@@ -122,16 +120,25 @@ No celular, o carrossel de serviços ocupa a largura toda e funciona com um desl
 | ESLint + Prettier                                                                 | Análise e formatação do código              |
 | GitHub Actions + GitHub Pages                                                     | CI, deploy automatizado e hospedagem        |
 
+</details>
+
 ## Qualidade e segurança
+
+Cada pull request passa pelas mesmas verificações antes de chegar ao site.
 
 <img alt="Conferido a cada push: formatação com Prettier, lint com ESLint, tipos com tsc, testes com Vitest e fast-check, build com Vite e deploy no GitHub Pages. Segurança contínua com CodeQL, OpenSSF Scorecard semanal, Dependabot e actions fixadas por hash" src="./.github/assets/quality-pt.webp" width="100%">
 
+<details>
+<summary>Como funciona cada verificação</summary>
+
 - O workflow [`ci.yml`](.github/workflows/ci.yml) verifica formatação, lint, tipos, testes e build em cada push e pull request para a `main`.
-- [CodeQL](https://github.com/Plovatto/PetLand/security/code-scanning) analisa o código, e o [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand) roda toda semana.
-- O Dependabot atualiza as dependências npm toda semana e as GitHub Actions todo mês.
 - O [Lighthouse CI](.github/workflows/lighthouse.yml) audita `/` e `/en/` em cada pull request e falha se acessibilidade, boas práticas ou SEO ficarem abaixo de 95.
 - Os títulos dos pull requests são conferidos no mesmo formato gitmoji e Conventional Commits dos commits.
+- O [CodeQL](https://github.com/Plovatto/PetLand/security/code-scanning) analisa o código, e o [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand) roda toda semana.
+- O Dependabot atualiza as dependências npm toda semana e as GitHub Actions todo mês.
 - Todas as actions dos workflows são fixadas por hash de commit.
+
+</details>
 
 ## Como executar
 
@@ -240,14 +247,24 @@ O PetLand foi desenvolvido para praticar e demonstrar:
 
 ## Contribuição
 
-Veja o [CONTRIBUTING.md](CONTRIBUTING.md) e o [código de conduta](CODE_OF_CONDUCT.md), ambos em inglês. Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
+Issues e pull requests são bem-vindos. Leia o [guia de contribuição](CONTRIBUTING.md) para as convenções de branch, commit e pull request, e siga o [código de conduta](CODE_OF_CONDUCT.md). Ambos estão em inglês.
+
+## Segurança
+
+Não abra issues públicas para vulnerabilidades. Reporte de forma privada, como descrito na [política de segurança](SECURITY.md).
+
+## Histórico de versões
+
+As mudanças de cada versão estão no [CHANGELOG](CHANGELOG.md) (em inglês) e na [página de releases](https://github.com/Plovatto/PetLand/releases).
+
+## Autoria
+
+**Pandora Becker Lovatto** · [@Plovatto](https://github.com/Plovatto)
 
 ## Licença
 
-Distribuído sob a [Licença MIT](LICENSE). O histórico de versões está no [CHANGELOG](CHANGELOG.md) (em inglês).
+Distribuído sob a [Licença MIT](LICENSE).
 
 <br>
 
-<div align="center">
-  <sub>Feito por <a href="https://github.com/Plovatto">Pandora Becker Lovatto</a>.</sub>
-</div>
+<p align="center"><a href="#readme"><img alt="Voltar ao topo" src="./.github/assets/logo-mark.svg" width="40"></a></p>
