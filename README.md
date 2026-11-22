@@ -141,6 +141,8 @@ On phones, the services carousel spans the full width and works with a swipe.
 - The [`ci.yml`](.github/workflows/ci.yml) workflow checks formatting, lint, types, tests, and build on every push and pull request to `main`.
 - [CodeQL](https://github.com/Plovatto/PetLand/security/code-scanning) scans the code, and the [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand) runs every week.
 - Dependabot updates npm dependencies weekly and GitHub Actions monthly.
+- [Lighthouse CI](.github/workflows/lighthouse.yml) audits `/` and `/en/` on every pull request and fails if accessibility, best practices, or SEO drop below 95.
+- Pull request titles are checked against the same gitmoji and Conventional Commits format as the commits.
 - Every action in the workflows is pinned to a commit hash.
 
 ## Getting started
@@ -191,6 +193,7 @@ Requires [Node.js](https://nodejs.org/) 24 (see [`.nvmrc`](.nvmrc)) and npm.
 | `npm run test:watch`   | Runs the tests in watch mode                         |
 | `npm run format`       | Formats the code with Prettier                       |
 | `npm run format:check` | Checks formatting without changing files             |
+| `npm run lighthouse`   | Runs Lighthouse CI against the production build      |
 
 ## Project structure
 
@@ -253,7 +256,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT
 
 ## License
 
-Distributed under the [MIT License](LICENSE).
+Distributed under the [MIT License](LICENSE). Release history is in the [CHANGELOG](CHANGELOG.md).
 
 <br>
 

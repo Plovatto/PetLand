@@ -141,6 +141,8 @@ No celular, o carrossel de serviços ocupa a largura toda e funciona com um desl
 - O workflow [`ci.yml`](.github/workflows/ci.yml) verifica formatação, lint, tipos, testes e build em cada push e pull request para a `main`.
 - [CodeQL](https://github.com/Plovatto/PetLand/security/code-scanning) analisa o código, e o [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Plovatto/PetLand) roda toda semana.
 - O Dependabot atualiza as dependências npm toda semana e as GitHub Actions todo mês.
+- O [Lighthouse CI](.github/workflows/lighthouse.yml) audita `/` e `/en/` em cada pull request e falha se acessibilidade, boas práticas ou SEO ficarem abaixo de 95.
+- Os títulos dos pull requests são conferidos no mesmo formato gitmoji e Conventional Commits dos commits.
 - Todas as actions dos workflows são fixadas por hash de commit.
 
 ## Como executar
@@ -191,6 +193,7 @@ Requer [Node.js](https://nodejs.org/) 24 (veja o [`.nvmrc`](.nvmrc)) e npm.
 | `npm run test:watch`   | Executa os testes em modo de observação                |
 | `npm run format`       | Formata o código com Prettier                          |
 | `npm run format:check` | Verifica a formatação sem alterar os arquivos          |
+| `npm run lighthouse`   | Roda o Lighthouse CI sobre o build de produção         |
 
 ## Estrutura do projeto
 
@@ -253,7 +256,7 @@ Veja o [CONTRIBUTING.md](CONTRIBUTING.md) e o [código de conduta](CODE_OF_CONDU
 
 ## Licença
 
-Distribuído sob a [Licença MIT](LICENSE).
+Distribuído sob a [Licença MIT](LICENSE). O histórico de versões está no [CHANGELOG](CHANGELOG.md) (em inglês).
 
 <br>
 
