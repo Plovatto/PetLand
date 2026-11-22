@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "lighthouse": "lhci autorun"
   },
   "dependencies": {
     "@emailjs/browser": "^5.0.3",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@lhci/cli": "^0.16.1",
     "@tailwindcss/vite": "^4.3.5",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
