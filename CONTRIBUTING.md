@@ -1,13 +1,13 @@
-# Como contribuir
+# Contributing
 
-## Reportando problemas
+## Reporting issues
 
-Abra uma [issue](https://github.com/Plovatto/PetLand/issues) descrevendo o problema, os passos para reproduzir e o comportamento esperado. Falhas de segurança devem ser reportadas pela [política de segurança](SECURITY.md).
+Open an [issue](https://github.com/Plovatto/PetLand/issues) describing the problem, the steps to reproduce it, and the expected behavior. Security issues must be reported through the [security policy](SECURITY.md).
 
-## Enviando alterações
+## Submitting changes
 
-1. Crie uma branch a partir da `main` com o prefixo do tipo da alteração: `feat/`, `fix/`, `perf/`, `chore/` ou `docs/`.
-2. Use commits no padrão [gitmoji](https://gitmoji.dev/) com [Conventional Commits](https://www.conventionalcommits.org/), por exemplo `:sparkles: feat: add services section`.
-3. Funcionalidades novas e correções devem vir acompanhadas de testes.
-4. Antes de abrir o pull request, rode `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm test` e `npm run build`.
-5. Abra o pull request para a `main` descrevendo o que foi feito, os detalhes e como foi testado.
+1. Create a branch from `main` prefixed with the type of change: `feat/`, `fix/`, `perf/`, `chore/`, or `docs/`.
+2. Write commits using [gitmoji](https://gitmoji.dev/) with [Conventional Commits](https://www.conventionalcommits.org/), for example `:sparkles: feat: add services section`.
+3. New features and fixes must include tests.
+4. Before opening the pull request, run `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build`.
+5. Open the pull request against `main`, describing what was done, the details, and how it was tested.

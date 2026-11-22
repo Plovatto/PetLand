@@ -249,7 +249,7 @@ O PetLand foi desenvolvido para praticar e demonstrar:
 
 ## Contribuição
 
-Veja o [CONTRIBUTING.md](CONTRIBUTING.md). Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
+Veja o [CONTRIBUTING.md](CONTRIBUTING.md) (em inglês). Falhas de segurança devem ser reportadas conforme o [SECURITY.md](SECURITY.md).
 
 ## Licença
 
