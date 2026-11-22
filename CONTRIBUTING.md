@@ -10,6 +10,6 @@ Open an [issue](https://github.com/Plovatto/PetLand/issues) describing the probl
 2. Write commits using [gitmoji](https://gitmoji.dev/) with [Conventional Commits](https://www.conventionalcommits.org/), for example `:sparkles: feat: add services section`.
 3. New features and fixes must include tests.
 4. Before opening the pull request, run `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build`.
-5. Open the pull request against `main`, describing what was done, the details, and how it was tested.
+5. Open the pull request against `main`, describing what was done, the details, and how it was tested. The pull request title must follow the same format as the commits; a check validates it.
 
 By participating, you agree to follow the [code of conduct](CODE_OF_CONDUCT.md).
