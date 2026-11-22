@@ -77,25 +77,46 @@ The site is live on GitHub Pages in both languages.
 
 ## Features
 
-### Experience
+Everything a small business site needs, built with care.
 
-- Responsive layout for every screen size
-- Smooth scrolling with Lenis and navigation that highlights the current section
-- Custom cursor and page loader with the brand identity
-- Animations and microinteractions that respect "reduce motion"
-
-### Content
-
-- Home, Services (with carousel), About, and Contact sections
-- Contact form integrated with EmailJS
-- Footer with the brand's visual identity
-
-### Languages, SEO, and performance
-
-- Portuguese and English, with one URL per language (`/` and `/en/`) and `hreflang`
-- Initial language based on the system, with the choice saved locally
-- Meta tags, structured data, `robots.txt`, and `sitemap.xml`
-- Assets optimized as WebP
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/responsive.svg" width="40" height="40">
+      <h3>Responsive everywhere</h3>
+      <p>A layout tuned for every screen size, with a full-width, swipeable services carousel on phones.</p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/languages.svg" width="40" height="40">
+      <h3>Two languages, two URLs</h3>
+      <p>Portuguese at <code>/</code> and English at <code>/en/</code> with <code>hreflang</code>. The first visit follows the system language, and the choice is saved locally.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/motion.svg" width="40" height="40">
+      <h3>Motion with care</h3>
+      <p>Smooth scrolling with Lenis, a custom cursor, a page loader, and microinteractions that respect "reduce motion".</p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/contact.svg" width="40" height="40">
+      <h3>A contact form that works</h3>
+      <p>Messages are sent with EmailJS, next to the address, phone, and opening hours.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/search.svg" width="40" height="40">
+      <h3>Ready for search</h3>
+      <p>Meta tags, structured data, <code>robots.txt</code>, <code>sitemap.xml</code>, and images optimized as WebP.</p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/checks.svg" width="40" height="40">
+      <h3>Tested and checked</h3>
+      <p>Translation tests with Vitest and fast-check, plus lint, types, build, and Lighthouse on every pull request.</p>
+    </td>
+  </tr>
+</table>
 
 ## Tech stack
 

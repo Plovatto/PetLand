@@ -77,25 +77,46 @@ O site está publicado no GitHub Pages nos dois idiomas.
 
 ## Funcionalidades
 
-### Experiência
+Tudo o que o site de um pequeno negócio precisa, feito com cuidado.
 
-- Layout responsivo para todos os tamanhos de tela
-- Rolagem suave com Lenis e navegação que destaca a seção atual
-- Cursor personalizado e page loader com a identidade da marca
-- Animações e microinterações que respeitam o "reduzir movimento"
-
-### Conteúdo
-
-- Seções Início, Serviços (com carrossel), Sobre e Contato
-- Formulário de contato integrado ao EmailJS
-- Footer com a identidade visual da marca
-
-### Idiomas, SEO e desempenho
-
-- Português e inglês, com uma URL por idioma (`/` e `/en/`) e `hreflang`
-- Idioma inicial definido pelo sistema, com a escolha salva localmente
-- Metatags, dados estruturados, `robots.txt` e `sitemap.xml`
-- Assets otimizados em WebP
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/responsive.svg" width="40" height="40">
+      <h3>Responsivo em qualquer tela</h3>
+      <p>Layout ajustado para todos os tamanhos de tela, com o carrossel de serviços na largura toda e de deslizar no celular.</p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/languages.svg" width="40" height="40">
+      <h3>Dois idiomas, duas URLs</h3>
+      <p>Português em <code>/</code> e inglês em <code>/en/</code> com <code>hreflang</code>. A primeira visita segue o idioma do sistema, e a escolha fica salva no navegador.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/motion.svg" width="40" height="40">
+      <h3>Movimento com cuidado</h3>
+      <p>Rolagem suave com Lenis, cursor personalizado, page loader e microinterações que respeitam o "reduzir movimento".</p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/contact.svg" width="40" height="40">
+      <h3>Formulário de contato funcionando</h3>
+      <p>As mensagens são enviadas pelo EmailJS, ao lado de endereço, telefone e horários.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/search.svg" width="40" height="40">
+      <h3>Pronto para buscadores</h3>
+      <p>Metatags, dados estruturados, <code>robots.txt</code>, <code>sitemap.xml</code> e imagens otimizadas em WebP.</p>
+    </td>
+    <td width="50%" valign="top">
+      <img alt="" src="./.github/assets/icons/checks.svg" width="40" height="40">
+      <h3>Testado e verificado</h3>
+      <p>Testes de tradução com Vitest e fast-check, além de lint, tipos, build e Lighthouse em cada pull request.</p>
+    </td>
+  </tr>
+</table>
 
 ## Tecnologias
 
