@@ -145,7 +145,7 @@ No celular, o carrossel de serviços ocupa a largura toda e funciona com um desl
 
 ## Como executar
 
-Requer [Node.js](https://nodejs.org/) e npm.
+Requer [Node.js](https://nodejs.org/) 24 (veja o [`.nvmrc`](.nvmrc)) e npm.
 
 1. Clone o repositório e instale as dependências:
 
