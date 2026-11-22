@@ -249,7 +249,7 @@ PetLand was built to practice and demonstrate:
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Security issues should be reported according to [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md). Security issues should be reported according to [SECURITY.md](SECURITY.md).
 
 ## License
 

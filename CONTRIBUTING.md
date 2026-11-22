@@ -11,3 +11,5 @@ Open an [issue](https://github.com/Plovatto/PetLand/issues) describing the probl
 3. New features and fixes must include tests.
 4. Before opening the pull request, run `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm test`, and `npm run build`.
 5. Open the pull request against `main`, describing what was done, the details, and how it was tested.
+
+By participating, you agree to follow the [code of conduct](CODE_OF_CONDUCT.md).
